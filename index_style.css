@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+html,
+body,
+body>div {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+#side_bar {
+  background: #ff9966;
+  background: -moz-linear-gradient(45deg, #ff9966 0%, #ff5e62 100%);
+  background: -webkit-linear-gradient(45deg, #ff9966 0%, #ff5e62 100%);
+  background: linear-gradient(45deg, #ff9966 0%, #ff5e62 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9966', endColorstr='#ff5e62', GradientType=1);
+  width: 40%;
+  float: left;
+}
+
+#side_bar>div.container {
+  margin: 150px 0;
+  margin-left: 40px
+}
+
+#side_bar h1 {
+  font-family: 'Bree Serif', serif;
+}
+
+#side_bar a {
+  color: #FEE980;
+}
+
+#side_bar h1>small {
+  color: #f6f6f6;
+}
+
+#side_bar ul {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#side_bar ul a,
+#side_bar ul svg {
+  color: white
+}
+
+#body {
+  width: 60%;
+  float: right
+}
+
+#body nav {
+  min-height: 100px;
+}

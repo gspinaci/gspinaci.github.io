@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" prefix="
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" prefix="
     schema: http://schema.org/
-    prism: http://prismstandard.org/namespaces/basic/2.0/">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/rash.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/rash-inline.css" />
-  <script src="js/jquery.min.js"></script>
+    prism: http://prismstandard.org/namespaces/basic/2.0/"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/rash.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/rash-inline.css">
+  <script src="js/jquery.min.js"></script><script src="js/raje-core/init_core.js" data-rash-original-content=""></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/rash.js"></script>
@@ -20,51 +17,34 @@
   <script src="js/libs/rangy-textrange.js"></script>
   <script src="js/libs/rangy-selectionsaverestore.js"></script>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <title>The RASH JavaScript Editor (RAJE) -- ​A wordprocessor for writing Web-first scholarly articles</title>
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​gianmarco.spinaci@studio.unibo.it" typeof="schema:Person" property="schema:name"
-    name="dc.creator" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Gianmarco Spinaci" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​gianmarco.spinaci@studio.unibo.it" property="schema:email" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​gianmarco.spinaci@studio.unibo.it"
-  />
-  <link about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​gianmarco.spinaci@studio.unibo.it" property="schema:affiliation"
-    href="affiliation1" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​silvio.peroni@unibo.it" typeof="schema:Person" property="schema:name"
-    name="dc.creator" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Silvio Peroni" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​silvio.peroni@unibo.it" property="schema:email" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​silvio.peroni@unibo.it&#10;"
-  />
-  <link about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​silvio.peroni@unibo.it" property="schema:affiliation" href="affiliation2"
-  />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​angelo.diiorio@unibo.it" typeof="schema:Person" property="schema:name"
-    name="dc.creator" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Angelo Di Iorio" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​angelo.diiorio@unibo.it" property="schema:email" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​angelo.diiorio@unibo.it"
-  />
-  <link about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​angelo.diiorio@unibo.it" property="schema:affiliation" href="affiliation2"
-  />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​francesco.poggi5@unibo.it" typeof="schema:Person" property="schema:name"
-    name="dc.creator" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Francesco Poggi" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​francesco.poggi5@unibo.it" property="schema:email" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​francesco.poggi5@unibo.it"
-  />
-  <link about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​francesco.poggi5@unibo.it" property="schema:affiliation" href="affiliation2"
-  />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​fabio.vitali@unibo.it" typeof="schema:Person" property="schema:name"
-    name="dc.creator" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Fabio Vitali" />
-  <meta about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​fabio.vitali@unibo.it" property="schema:email" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​fabio.vitali@unibo.it"
-  />
-  <link about="mailto:​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​fabio.vitali@unibo.it" property="schema:affiliation" href="affiliation2"
-  />
-  <meta about="affiliation1" typeof="schema:Organization" property="schema:name" content="​​​​​​​​​​​​​​​​​​DASPLab, DISI, University of Bologna, Bologna, Italy"
-  />
-  <meta about="affiliation2" typeof="schema:Organization" property="schema:name" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​DASPLab, DISI, University of Bologna, Bologna, Italy"
-  />
+  <title>The RASH JavaScript Editor (RAJE) -- &#x200B;A wordprocessor for writing Web-first scholarly articles</title>
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;gianmarco.spinaci@studio.unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Gianmarco Spinaci">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;gianmarco.spinaci@studio.unibo.it" property="schema:email" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;gianmarco.spinaci@studio.unibo.it">
+  <link about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;gianmarco.spinaci@studio.unibo.it" property="schema:affiliation" href="affiliation1">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;silvio.peroni@unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Silvio Peroni">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;silvio.peroni@unibo.it" property="schema:email" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;silvio.peroni@unibo.it
+">
+  <link about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;silvio.peroni@unibo.it" property="schema:affiliation" href="affiliation2">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;angelo.diiorio@unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Angelo Di Iorio">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;angelo.diiorio@unibo.it" property="schema:email" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;angelo.diiorio@unibo.it">
+  <link about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;angelo.diiorio@unibo.it" property="schema:affiliation" href="affiliation2">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;francesco.poggi5@unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Francesco Poggi">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;francesco.poggi5@unibo.it" property="schema:email" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;francesco.poggi5@unibo.it">
+  <link about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;francesco.poggi5@unibo.it" property="schema:affiliation" href="affiliation2">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;fabio.vitali@unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Fabio Vitali">
+  <meta about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;fabio.vitali@unibo.it" property="schema:email" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;fabio.vitali@unibo.it">
+  <link about="mailto:&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;fabio.vitali@unibo.it" property="schema:affiliation" href="affiliation2">
+  <meta about="affiliation1" typeof="schema:Organization" property="schema:name" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;DASPLab, DISI, University of Bologna, Bologna, Italy">
+  <meta about="affiliation2" typeof="schema:Organization" property="schema:name" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;DASPLab, DISI, University of Bologna, Bologna, Italy">
 
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​RAJE" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Research Article in Simplified HTML" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​RASH" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​RASH framework" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Web-first format" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​HTML-based scholarly articles" />
-  <meta property="prism:keyword" content="​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​research communication" />
-  <meta name="dcterms.subject" content="​​​​​​Applied Computing, Computers in other domains, Personal computers and PC applications, word processors"
-  />
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;RAJE">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Research Article in Simplified HTML">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;RASH">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;RASH framework">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Web-first format">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;HTML-based scholarly articles">
+  <meta property="prism:keyword" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;research communication">
+  <meta name="dcterms.subject" content="&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;&#x200B;Applied Computing, Computers in other domains, Personal computers and PC applications, word processors">
 </head>
 
 <body>
@@ -118,13 +98,13 @@
       to be processed by machines. In addition, RAJE uses the GitHub API so as to allow authors to store their articles online,
       to keep track of changes by means of the GitHub services, and to share the articles with others. This paper has been
       written by using RAJE itself, and it was converted into the appropriate layout requested by the conference by means
-      of the <a href="http://dasplab.cs.unibo.it/rocs">RASH Online Conversion Service (ROCS)</a> <a href="#bib16"></a>.</p>
+      of the <a href="http://dasplab.cs.unibo.it/rocs">RASH Online Conversion Service (ROCS)</a>&#xA0;<a href="#bib16"></a>.</p>
     <p>The rest of the paper is organised as follows. In <a href="#section2"> </a> we describe some of the most important HTML-based
-      editors, while in <a href="#background"></a> we give some background about RASH and the existing tools in the RASH
-      framework. In <a href="#section3"></a> we introduce RAJE, and we provide a high-level description and show some details
-      about its implementation. In <a href="#section4"></a> we present the outcomes of a user testing session we have run
+      editors, while in <a href="#background"></a>&#xA0;we give some background about RASH and the existing tools in the RASH
+      framework. In&#xA0;<a href="#section3"></a>&#xA0;we introduce RAJE, and we provide a high-level description and show some details
+      about its implementation. In&#xA0;<a href="#section4"></a>&#xA0;we present the outcomes of a user testing session we have run
       by involving people in the Academia so as to understand the level of perceived usability of RAJE when used for writing
-      a scholarly article. Finally, in <a href="#section9"></a> we conclude the paper sketching out some future developments.</p>
+      a scholarly article. Finally, in&#xA0;<a href="#section9"></a>&#xA0;we conclude the paper sketching out some future developments.</p>
   </section>
   <section id="section2">
     <h1>Related works</h1>
@@ -137,7 +117,7 @@
       change. In addition, every article is accessible from anywhere, by using any device connected to the Internet, and
       no TeX installation is required for producing the final PDF layout necessary for the submission. In addition, Authorea
       allows one to write <a href="https://www.authorea.com/users/3/articles/6055-how-is-authorea-different-from-google-docs/">mathematical notations, tables, plots and figures in each LaTeX and MathML</a>.</p>
-    <p>​​<strong><a href="http://dokie.li/">Dokieli</a></strong> <a href="#bib17"> </a> is a client-side editor for decentralised
+    <p>&#x200B;&#x200B;<strong><a href="http://dokie.li/">Dokieli</a></strong> <a href="#bib17"> </a> is a client-side editor for decentralised
       article publishing, annotations, and social interactions. Since Dokieli follows a pure decentralisation principle,
       authors can publish the paper where they prefer. In particular, Dokieli complies with the <a href="https://solid.mit.edu/">Solid protocol</a>,
       based on the Linked Data Platform W3C standard <a href="#bib18"> </a> <a href="#bib19"> </a>, so as to allows one to
@@ -151,7 +131,7 @@
     <p><strong><a href="https://www.tinymce.com/">TinyMCE</a></strong> is a WYSIWYG HTML-based editor that can be instantiated
       within an existing HTML page. It is a huge project that involves more than 150 contributors with almost 6500 commits
       on <a href="https://github.com/tinymce/tinymce">Github</a>. Its include facilities for formatting, table insertion,
-      image editing, customizable themes, and it is accessible for users with disabilities – in fact, it follows WAI-ARIA
+      image editing, customizable themes, and it is accessible for users with disabilities &#x2013; in fact, it follows WAI-ARIA
       guidelines <a href="#bib20"> </a> so as to make HTML documents compatible with screen readers such as JAWS and NVDA.
       It is already integrated with frameworks such as JQuery and Angular.js, or inside common content management systems
       such as Wordpress or Joomla.</p>
@@ -169,12 +149,12 @@
         In addition, RASH strictly follows the Digital Publishing WAI-ARIA Module 1.0 <a href="#bib14"> </a> for expressing
         structural semantics on various markup elements used. </p>
       <p>A RASH document begins as a simple (X)HTML5 document, by specifying the generic HTML DOCTYPE followed by the document
-        element <code>html</code> with the usual namespace <q>http://www.w3.org/1999/xhtml</q> specified. The element <code>html</code> contains
-        the element <code>head</code> for defining metadata of the document according to the DCTERMS and PRISM standards,
-        and the element <code>body</code> for including the whole content of the document. On the one hand, the element <code>head</code> of
-        a RASH document must/should include some information about the paper, i.e., the paper title (element <code>title</code>),
-        at least one author and other related information (i.e., affiliations, keywords, categories, by using the elements <code>meta</code> and <code>link</code>).
-        On the other hand, the element <code>body</code> mainly contains textual elements (e.g., paragraphs, emphases, links,
+        element <code>html</code> with the usual namespace&#xA0;<q>http://www.w3.org/1999/xhtml</q>&#xA0;specified. The element&#xA0;<code>html</code>&#xA0;contains
+        the element&#xA0;<code>head</code>&#xA0;for defining metadata of the document according to the DCTERMS and PRISM standards,
+        and the element&#xA0;<code>body</code>&#xA0;for including the whole content of the document. On the one hand, the element&#xA0;<code>head</code>&#xA0;of
+        a RASH document must/should include some information about the paper, i.e., the paper title (element&#xA0;<code>title</code>),
+        at least one author and other related information (i.e., affiliations, keywords, categories, by using the elements&#xA0;<code>meta</code>&#xA0;and&#xA0;<code>link</code>).
+        On the other hand, the element&#xA0;<code>body</code>&#xA0;mainly contains textual elements (e.g., paragraphs, emphases, links,
         and quotations) for describing the content of the paper, and other structural elements (e.g., abstract, sections,
         references, and footnotes) used to organised the paper in appropriate blocks and to present specific complex structures
         (e.g., figures, formulas, and tables).</p>
@@ -184,7 +164,7 @@
         services and functionalities for the final users.</p>
       <p>
         In particular, it is worth stressing here on the usage of patterns within RASH, that heavily impacted on the design and behavior
-        or RAJE. The systematic use of these structural patterns is an added value in all stages of the documents' life-cycle:
+        or RAJE. The systematic use of these structural patterns is an added value in all stages of the documents&apos; life-cycle:
         they can be guidelines for creating well-engineered documents and vocabularies, as well as helpers to manipulate
         structural components in documents.
       </p>
@@ -196,8 +176,7 @@
         for checking the validity of RASH documents, visualising RASH documents on browsers with different layouts, for converting
         RASH documents into LaTeX and ODT/DOCX files into RASH, and for automatically annotate RASH elements with their actual
         (structural) semantics according to the <a href="http://purl.org/spar/doco">Document Components Ontology (DoCO)</a>
-        <a
-          href="#bib21"></a>.</p>
+        <a href="#bib21"></a>.</p>
     </section>
   </section>
   <section id="section3">
@@ -213,7 +192,7 @@
         a series of desiderata and needs that such an editor should properly address, as introduced in the following list:</p>
       <ul>
         <li>
-          <p>being totally compatible with RASH and HTML5; </p>
+          <p>being totally compatible with RASH and HTML5;&#xA0;</p>
         </li>
         <li>
           <p>relying on the existing tools developed for visualising RASH documents, included in the RASH Framework;</p>
@@ -222,7 +201,7 @@
           <p>simplifying the writing of the document keeping things as natural as possible;</p>
         </li>
         <li>
-          <p>not enabling the user to personalise the actual rendering of the document according to specific layouts – the focus
+          <p>not enabling the user to personalise the actual rendering of the document according to specific layouts &#x2013; the focus
             must be on the content only;</p>
         </li>
         <li>
@@ -241,27 +220,27 @@
         can be created by means of RAJE.</p>
       <section id="section14">
         <h1>Article metadata</h1>
-        <p>The metadata of a RASH document are stored inside the <code>​head</code>​ element by using <code>meta</code>​ or
-          <code>​link</code>​ elements. These metadata are rendered by the browser as shown in <a href="#figure_1"> </a> and
+        <p>The metadata of a RASH document are stored inside the <code>&#x200B;head</code>&#x200B; element by using&#xA0;<code>meta</code>&#x200B; or
+          <code>&#x200B;link</code>&#x200B; elements. These metadata are rendered by the browser as shown in&#xA0;<a href="#figure_1"> </a>&#xA0;and
           include the title (mandatory), the author list (mandatory), the ACM subject categories (optional), and the keywords
-          (optional). RAJE permits to act on any of these metadata.</p>
+          (optional).&#xA0;RAJE permits to act on any of these metadata.</p>
         <figure id="figure_1">
-          <p><img src="img/header.png" alt="img/header.png" /></p>
+          <p><img src="img/header.png" alt="img/header.png"></p>
           <figcaption>Header of a rendered RASH document as shown in RAJE.</figcaption>
         </figure>
-        <p>Every element in this metadata section can be easily edited by clicking on it – and the cursor will be placed where
-          requested. The title is usually accompanied with a subtitle. To insert the subtitle, one can simply press ​<code>enter</code>​
+        <p>Every element in this metadata section can be easily edited by clicking on it &#x2013; and the cursor will be placed where
+          requested.&#xA0;The title is usually accompanied with a subtitle. To insert the subtitle, one can simply press &#x200B;<code>enter</code>&#x200B;
           at the end of the title. Once added, the subtitle can be filled up with text, and the author can proceed to the
-          next editable element pressing <code>enter</code> again.​​</p>
-        <p>Any author listed has its own button set for adding a new author after it or for removing the selected one. It is
-          possible to specify more affiliations for the same author by pressing the <code>​enter</code>​ key once the cursor
-          is placed in the affiliation area, just after the author's name. This action will add a new placeholder that can
-          be edited by typing new text or removed by pressing <code>enter</code> again as shown in <a href="#figure_2"> </a>.</p>
+          next editable element pressing&#xA0;<code>enter</code>&#xA0;again.&#x200B;&#x200B;</p>
+        <p>Any author listed&#xA0;has its own button set for adding a new author after it or for removing the selected one. It is
+          possible to specify more affiliations for the same author by pressing the&#xA0;<code>&#x200B;enter</code>&#x200B; key once the cursor
+          is placed in the affiliation area, just after the author&apos;s name. This action will add a new placeholder that can
+          be edited by typing new text or removed by pressing <code>enter</code>&#xA0;again as shown in&#xA0;<a href="#figure_2"> </a>.</p>
         <figure id="figure_2">
-          <p><img src="img/author.png" alt="img/author.png" /></p>
-          <figcaption>​Adding a new affiliation in RAJE.</figcaption>
+          <p><img src="img/author.png" alt="img/author.png"></p>
+          <figcaption>&#x200B;Adding a new affiliation in RAJE.</figcaption>
         </figure>
-        <p><em>Categories</em> and <em>keywords</em> can be also edited by clicking on the specific sections, and pressing the <code>enter</code> key
+        <p><em>Categories</em> and <em>keywords</em> can be also edited by clicking on the specific sections, and pressing the&#xA0;<code>enter</code>&#xA0;key
           allows one to add additional keywords/categories.</p>
       </section>
       <section id="section15">
@@ -270,16 +249,16 @@
           which include MathML, LaTeX and <a href="http://asciimath.org/">AsciiMath</a>. All these formulas are actually
           rendered by means of the <a href="https://www.mathjax.org/">MathJax processor</a>, while they will be stored in
           MathML in the final RASH source. This flexibility of using several formats allowed us to create an intuitive and
-          easy-to-use environment in RAJE in which users write down formulas using only AsciiMath as input – since, from
+          easy-to-use environment in RAJE in which users write down formulas using only AsciiMath as input &#x2013; since, from
           preliminary tests we run, AsciiMath seemed to be the language easier to learn, write and remember <a href="#bib26"> </a>.</p>
         <p>However, even if AsciiMath is the easier language for mathematical formulas that can be adopted in the contest of
           RASH documents, it could be difficult anyway to remember all the kinds of operation it allows one to specify. In
-          order to address this issue, RAJE also includes several buttons (labelled <q>Operations</q>, <q>Misc</q>, <q>Relations</q>, <q>Symbols</q>,
-          and <q>Formulas</q>, as shown in <a href="#figure_3"></a>) that allow one to select an operation among a list of
+          order to address this issue, RAJE also includes several buttons (labelled&#xA0;<q>Operations</q>,&#xA0;<q>Misc</q>,&#xA0;<q>Relations</q>,&#xA0;<q>Symbols</q>,
+          and&#xA0;<q>Formulas</q>, as shown in&#xA0;<a href="#figure_3"></a>) that allow one to select an operation among a list of
           instructions. The way all these buttons are presented to the user has been guided by considering the OpenOffice
           formula editor.</p>
         <figure id="figure_3">
-          <p><img src="img/formulaeditor.png" alt="The formula editor in RAJE." /></p>
+          <p><img src="img/formulaeditor.png" alt="The formula editor in RAJE."></p>
           <figcaption>The formula editor in RAJE.</figcaption>
         </figure>
       </section>
@@ -293,13 +272,13 @@
         management). In this context, any article created by RAJE can be seen as a repository on GitHub.</p>
       <p>The first time an author pushes the article on GitHub, a new repository is created with all the code (i.e. the main
         text content in HTML) and assets (CSSs, JavaScript files, etc.) needed for guaranteeing a correct visualisation of
-        the article. The repository URL is created according to the schema <code>https://github.com/{author_username}/{repository_name}​</code>​,
-        where <code>{author_username}</code> is replaced with the author's GitHub username, while the <code>{repository_name}</code> is
+        the article. The repository URL is created according to the schema <code>https://github.com/{author_username}/{repository_name}&#x200B;</code>&#x200B;,
+        where&#xA0;<code>{author_username}</code>&#xA0;is replaced with the author&apos;s GitHub username, while the&#xA0;<code>{repository_name}</code>&#xA0;is
         the title of the article.</p>
-      <p>During the editing phase, if a user wants to store online the content of a document, he must be first logged in with
+      <p>During the editing phase, if&#xA0;a user wants to store online the content of a document, he must be first logged in with
         its own Github account, which certifies its identity. Then the user has the option to save the document online, on
-        Github servers. This action can be executed in two ways: the shortcut <code>ctrl+shift+s</code> (<code>cmd+shift+s</code> if
-        OSX) or the button "push" under the dropdown with author's Github profile avatar on the top-right of the RAJE interface.
+        Github servers. This action can be executed in two ways: the shortcut&#xA0;<code>ctrl+shift+s</code>&#xA0;(<code>cmd+shift+s</code>&#xA0;if
+        OSX) or the button &quot;push&quot; under the dropdown with author&apos;s Github profile avatar on the top-right of the RAJE interface.
         A success message is shown once the commit finished successfully.</p>
     </section>
     <section id="section17">
@@ -324,40 +303,39 @@
         <p>RAJE is based on <a href="https://electron.atom.io/">Electron</a>, which allows developers to generate multi-platform
           software using only web-based technologies: HTML, CSS, and JavaScript. Electron is an Open Source framework created
           by Github developers, based on <a href="https://nodejs.org">Node.js</a>. Practically speaking, Electron is a browser
-          wrapper, since it uses Chromium to create multi-platform softwares. RAJE uses the File System APIs in Electron
-          so as to execute create/read/update/delete (CRUD) operations on files. When an author wants to generate a new article,
+          wrapper, since it uses Chromium to create multi-platform softwares.&#xA0;RAJE uses the File System APIs in Electron
+          so as to execute create/read/update/delete (CRUD) operations on files.&#xA0;When an author wants to generate a new article,
           RAJE creates its directory and move inside the whole required assets bundle (which are CSS stylesheets and JavaScript
-          scripts) using the functions defined in this API. </p>
+          scripts) using the functions defined in this API.&#xA0;</p>
         <p>The communications between RAJE and GitHub via its APIs is implemented using a specific wrapper: <a href="https://github.com/pksunkara/octonode">Octonode</a>.
           Octonode is built on the Github API v3, and it grants a lot of actions on contents, users, and repositories available
-          in GitHub. The Octonode library makes available different methods to authenticate with Github. RAJE has a mechanism
-          for directly connecting to a GitHub account by authorising it to access its personal information, as shown in
-          <a
-            href="#figure_4"> </a>. This window will describe what kind of permissions RAJE needs: it can read all public information about the
+          in GitHub.&#xA0;The Octonode library makes available different methods to authenticate with Github. RAJE has a mechanism
+          for directly connecting to a GitHub account by authorising it&#xA0;to access its personal information, as shown in
+          <a href="#figure_4"> </a>.&#xA0;This window will describe what kind of permissions RAJE needs: it can read all public information about the
             user (such as email, name, biography and so on) and about public repositories.</p>
         <figure id="figure_4">
-          <p><img src="img/authorize.png" alt="img/authorize.png" /></p>
-          <figcaption>The modal for autorising RAJE to access to user's GitHub information.</figcaption>
+          <p><img src="img/authorize.png" alt="img/authorize.png"></p>
+          <figcaption>The modal for autorising RAJE to access to user&apos;s GitHub information.</figcaption>
         </figure>
         <p>Once the authorisation is given, an access token is generated and used for the following requests to/from the GitHub
-          repository. When the token is stored, all future requests (such as create a repository or push a commit) are instantly
-          served because everything is saved inside a local variable of the user. When a new article is opened, a local folder
+          repository.&#xA0;When the token is stored, all future requests (such as create a repository or push a commit) are instantly
+          served because everything is saved inside a local variable of the user.&#xA0;When a new article is opened, a local folder
           is created with the document and all the needed assets. When authors want to push changes to a repository that
-          does not exist yet, it is created automatically. </p>
+          does not exist yet, it is created automatically.&#xA0;</p>
       </section>
       <section id="section19">
         <h1>Core scripts</h1>
-        <p>The splash window shown after opening RAJE is just an HTML file with its own JavaScript and CSS, which allows one
+        <p>The splash window shown after opening RAJE is just an&#xA0;HTML file with its own JavaScript and CSS, which allows one
           to create a new document or to open an existing one. Once created/opened, the editor shows a skeleton of a RASH
-          document (i.e. an HTML page) shown in <a href="#figure_9"></a>, which is visualised according to the <em>rash.js</em>          script. In addition, this HTML page also includes the <em>raje.js</em> script, for enabling users to edit the document
+          document (i.e. an HTML page) shown in&#xA0;<a href="#figure_9"></a>, which is visualised according to the&#xA0;<em>rash.js</em>          script. In addition, this HTML page also includes the&#xA0;<em>raje.js</em>&#xA0;script, for enabling users to edit the document
           by means of a toolbar and other useful elements.</p>
         <figure id="figure_9">
-          <p><img src="img/skeleton.png" alt="img/skeleton.png" /></p>
-          <figcaption>​The skeleton presented by RAJE after the creation of a new article.</figcaption>
+          <p><img src="img/skeleton.png" alt="img/skeleton.png"></p>
+          <figcaption>&#x200B;The skeleton presented by RAJE after the creation of a new article.</figcaption>
         </figure>
-        <p>Thus, <em>raje.js</em> implements the <em>editor behaviour</em> of RAJE and it is explicitly included in the HTML
+        <p>Thus, <em>raje.js</em> implements the&#xA0;<em>editor behaviour</em> of RAJE and it is explicitly included in the HTML
           document produced by it. However, open the HTML document with a common browser will result in viewing it by means
-          of the visualisation facilities made available by the RASH Framework as implemented in <em>rash.js</em>. All the
+          of the visualisation facilities made available by the RASH Framework as implemented in <em>rash.js</em>.&#xA0;All the
           RAJE project flow is totally based on the <em>raje.js</em> script, that has been developed by concatenating the
           following eight scripts (each with its own behaviour and purpose):</p>
         <ol>
@@ -387,26 +365,26 @@
           </li>
         </ol>
         <p><em>Init.js</em> is the initialization script, which initialises all the variables, it extends JQuery object adding
-          additional functions, and it calls the <code>$(document).ready()</code> function to show the whole editor. </p>
+          additional functions, and it calls the&#xA0;<code>$(document).ready()</code>&#xA0;function to show the whole editor.&#xA0;</p>
         <p>The second script, <em>caret.js</em>, provides some utility methods about the caret and its position within the content.
-          It contains functions to check if the caret is inside an element, and to create a selection that wraps entirely
+          It contains functions to check if the caret is inside an element, and&#xA0;to create a selection that wraps entirely
           the node where the caret is. All the methods here are based on <a href="https://github.com/timdown/rangy">Rangy</a>,
-          a cross-browser JavaScript range, and selection library. </p>
+          a cross-browser JavaScript range, and selection library.&#xA0;</p>
         <p>The file <em>const.js</em> defines constant values that are used by the other scripts.</p>
-        <p>The fourth script, i.e. <em>raje.js</em>, implements a set of actions to add elements into the body (sections, cross
-          references, inlines, etc.). These actions can use the browser content-editable APIs (e.g. to add undo/redo functionalities)
-          or the method <code>document.execCommand('insertHTML')​</code> for adding an HTML string to the caret. </p>
-        <p>All shortcuts used in the editor are defined in the shortcuts.js script. All of them are bound inside an init function
+        <p>The fourth script, i.e.&#xA0;<em>raje.js</em>, implements a set of actions to add elements into the body (sections, cross
+          references, inlines, etc.). These actions can use the browser&#xA0;content-editable APIs (e.g. to add undo/redo functionalities)
+          or the method&#xA0;<code>document.execCommand(&apos;insertHTML&apos;)&#x200B;</code>&#xA0;for adding an HTML string to the caret.&#xA0;</p>
+        <p>All shortcuts used in the editor are defined in the&#xA0;shortcuts.js script. All of them are bound inside an init function
           called when the document is ready. The shortcuts are all implemented using <a href="https://craig.is/killing/mice">Mousetrap</a>,
           a simple library for handling keyboard shortcuts in JavaScript.</p>
-        <p>The entire graphic elements set is defined in the<strong> </strong><em>toolbar.js</em> script. In particular, it
+        <p>The entire graphic elements set is defined in the<strong>&#xA0;</strong><em>toolbar.js</em>&#xA0;script. In particular, it
           adds the toolbar and all the modal windows used in RAJE (e.g. for creating formulas).</p>
-        <p>The document rendered in RAJE (or in any browser) is slightly different from the actual sources since <em>rash.js</em> applies
+        <p>The document rendered in RAJE (or in any browser) is slightly different from the actual sources since <em>rash.js</em>&#xA0;applies
           some transformations so as to guarantee a correct visualisation of all the metadata and the content of the article
           in consideration. Thus, in order to recreate correctly the structure of the sources that must be stored, we have
-          implemented the <em>derash.js</em> script. This script is used when a user asks to save the article, and it allows
+          implemented the&#xA0;<em>derash.js</em> script. This script is used when a user asks to save the article, and it allows
           the creation of a well-indented HTML code compliant with RASH that will be stored in the file system.</p>
-        <p>Last but not least, the <em>rendered.js</em> script contains everything to handle communication from the document
+        <p>Last but not least, the&#xA0;<em>rendered.js</em>&#xA0;script contains everything to handle communication from the document
           to other services, such as GitHub and the Electron File System APIs.</p>
       </section>
     </section>
@@ -416,14 +394,14 @@
     <p>In order to estimate the perceived usability of RAJE for writing scholarly articles, we have involved some people from
       the academic domain in a user testing session. All the material and the outcomes of the test is available at <a href="#bib22"> </a>.
       The test has been organised as a Discount Usability Test, which is a specific kind of test that involves a small group
-      of people. Past studies <a href="#bib5"></a> <a href="#bib4"></a> have demonstrated that it is possible to find up
+      of people. Past studies <a href="#bib5"></a> <a href="#bib4"></a>&#xA0;have demonstrated that it is possible to find up
       to 80% of the main bugs involving only 5 people. In this section, we present the setting and the outcome of the evaluation
       we performed.</p>
     <section id="section7">
       <h1>Settings</h1>
       <p>We asked 6 subjects to perform two unsupervised tasks. There were no administrators observing the subjects while they
-        were undertaking these tasks. All the subjects were volunteers who responded to personal emails. In the first task,
-        we asked the participants to reproduce the content of a <a href="http://gianmarco.spinaci.web.cs.unibo.it/raje/test.pdf">PDF of a scholarly article</a>        using RAJE. In the second task, we asked to the participants to push the article to GitHub by using the functionalities
+        were undertaking these tasks. All the subjects were volunteers who responded to personal emails.&#xA0;In the first task,
+        we asked the participants to reproduce the content of a&#xA0;<a href="http://gianmarco.spinaci.web.cs.unibo.it/raje/test.pdf">PDF of a scholarly article</a>        using RAJE. In the second task, we asked&#xA0;to the participants to push the article to GitHub by using the functionalities
         implemented in RAJE and to write down the URL of the repository created.</p>
       <p>The test session was structured as follows. We first asked subjects to complete a short multiple-choice questionnaire
         about their background knowledge and skills in writing scholarly articles. In particular, we asked them to answer
@@ -431,10 +409,10 @@
         These assertions were organised according to four different categories:</p>
       <ul>
         <li>
-          <p>Knowledge about document formats (DOC(X), ODT, etc.); </p>
+          <p>Knowledge about document formats (DOC(X), ODT, etc.);&#xA0;</p>
         </li>
         <li>
-          <p>Experience in using word processors and HTML-based editors; </p>
+          <p>Experience in using word processors and HTML-based editors;&#xA0;</p>
         </li>
         <li>
           <p>Expertise in writing scholarly articles;</p>
@@ -444,8 +422,8 @@
         </li>
       </ul>
       <p>Then, we asked participants to complete the aforementioned two tasks using RAJE <strong>without having any prior knowledge</strong>        about the tool. Finally, we asked the participants to fill in two short questionnaires, one multiple choice, i.e.
-        a System Usability Scale (SUS) questionnaire <a href="#bib23"></a>, and the other textual, to report their experience
-        of using RAJE to complete these tasks. </p>
+        a System Usability Scale (SUS) questionnaire&#xA0;<a href="#bib23"></a>, and the other textual, to report their experience
+        of using RAJE to complete these tasks.&#xA0;</p>
     </section>
     <section id="section8">
       <h1>Outcomes</h1>
@@ -455,31 +433,31 @@
         <a href="#bib23"></a>, a well-known questionnaire used for the perception of the usability of a system. It has the
         advantage of being technology independent (it has been tested on hardware, software, Web sites, etc.) and it is reliable
         even with a very small sample size. In addition to the main SUS scale, we also were interested in examining the sub-scales
-        of pure Usability and pure Learnability of the system, as proposed recently by Lewis and Sauro <a href="#bib24"></a>.
+        of pure Usability and pure Learnability of the system, as proposed recently by Lewis and Sauro&#xA0;<a href="#bib24"></a>.
         In the analysis of the SUS scores, we have noticed that one of the participants was a clear outlier since he experienced
         a misconfiguration of the system that prevented him from using RAJE correctly. Thus, for the SUS analysis, we decided
         not to consider the answers he provided, that were radically different from the other five participants indeed.</p>
       <p>The mean SUS score for RAJE was 69 (in a 0 to 100 range), slightly surpassing the target score of 68 to demonstrate
-        a good level of usability <a href="#bib23"></a>. The mean values for the SUS sub-scales Usability and Learnability
+        a good level of usability&#xA0;<a href="#bib23"></a>. The mean values for the SUS sub-scales Usability and Learnability
         were 65.6 and 82.5 respectively. In addition, four sub-scores were calculated for each participant by considering
         the values of the answers given in the background questionnaire, according to the four categories introduced in the
         previous section (knowledge on document formats, experience in using word processors, expertise in writing articles,
         and adoption of control version systems). We compared these sub-scores with the SUS values and the other sub-scales
-        using the Pearson’s r, obtaining the results illustrated in <a href="#figure_10"></a> (where the dashed line is a
-        linear regression). </p>
+        using the Pearson&#x2019;s r, obtaining the results illustrated in&#xA0;<a href="#figure_10"></a>&#xA0;(where the dashed line is a
+        linear regression).&#xA0;</p>
       <figure id="figure_10">
-        <p><img src="img/scores.png" alt="img/scores.png" /></p>
-        <figcaption>​The comparisons between the SUS scores (and subscales) and all the four background scores.</figcaption>
+        <p><img src="img/scores.png" alt="img/scores.png"></p>
+        <figcaption>&#x200B;The comparisons between the SUS scores (and subscales) and all the four background scores.</figcaption>
       </figure>
       <p>We found a small negative correlation between all the experience sub-scores and the Learnability score, which seems
         to highlight that the more background knowledge one has the more the system is difficult to learn. Similarly, the
         expertise in writing articles seems to be negatively correlated with any SUS score obtained. However, each correlation
         measure appears to be not statistically significant and we would need to enrich our dataset to come to a more precise
-        conclusion.​​​</p>
+        conclusion.&#x200B;&#x200B;&#x200B;</p>
     </section>
     <figure id="table_1">
       <table>
-        <tr>
+        <tbody><tr>
           <th>Category</th>
           <th>Positive</th>
           <th>Negative</th>
@@ -550,14 +528,14 @@
             <p>1</p>
           </td>
         </tr>
-      </table>
+      </tbody></table>
       <figcaption>Axial coding of the personal comments of the participants expressed in the final questionnaires.</figcaption>
     </figure>
-    <p>Axial coding <a href="#bib25"></a> of the personal comments expressed in the final questionnaires by all the six participants
-      revealed a some widely perceived issues, as shown in <a href="#table_1"> </a>. The most affected category concerns
-      the functionalities made available by RAJE. In fact, some bugs were faced by testers, and in some cases those bugs
-      denied the normal flow of tool. Basic keyboard shortcuts such as <code>ctrl+a</code> to select the entire content of
-      a single metadata or the <code>tab</code> key to navigate from a table cell to the next one was not implemented yet,
+    <p>Axial coding&#xA0;<a href="#bib25"></a>&#xA0;of the personal comments expressed in the final questionnaires by all the six participants
+      revealed a some widely perceived issues, as shown in&#xA0;<a href="#table_1"> </a>. The most affected category concerns
+      the functionalities made available by RAJE. In fact,&#xA0;some bugs were faced by testers, and in some cases those bugs
+      denied the normal flow of tool. Basic keyboard shortcuts such as&#xA0;<code>ctrl+a</code>&#xA0;to select the entire content of
+      a single metadata or the&#xA0;<code>tab</code>&#xA0;key to navigate from a table cell to the next one was not implemented yet,
       and they have been perceived as important flows. The insertion of elements have shown some issues that prevented the
       participants to add some structures (such as tables, figures and formulas) were requested. Another important issue
       highlighted was the lack of a form for adding structured bibliographic references, e.g. by using the fields proper
@@ -592,7 +570,7 @@
           HTML: a Web-first format for HTML-based scholarly articles (2016). <a href="https://essepuntato.github.io/papers/rash-peerj2016.html">https://essepuntato.github.io/papers/rash-peerj2016.html</a>          (last visited April 10, 2017)</p>
       </li>
       <li id="bib6" role="doc-biblioentry">
-        <p>Aalbersberg I. PDF versus HTML — which do researchers prefer? (2013) <a href="https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer">https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer</a>          (last visited April 10, 2017)</p>
+        <p>Aalbersberg I. PDF versus HTML &#x2014; which do researchers prefer? (2013) <a href="https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer">https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer</a>          (last visited April 10, 2017)</p>
       </li>
       <li id="bib5" role="doc-biblioentry">
         <p>Nielsen, J. (2009). Discount Usability: 20 Years. <a href="https://www.nngroup.com/articles/discount-usability-20-years/">https://www.nngroup.com/articles/discount-usability-20-years/</a>          (last visited March 10, 2017)</p>
@@ -662,6 +640,6 @@
       </li>
     </ul>
   </section>
-</body>
 
-</html>
+
+</body></html>
