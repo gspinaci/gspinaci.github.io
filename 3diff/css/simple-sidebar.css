@@ -8,7 +8,8 @@ body {
 }
 
 #sidebar-wrapper {
-  min-width: 250px;
+  overflow: scroll;
+  min-width: 320px;
   min-height: 100vh;
   margin-left: -15rem;
   -webkit-transition: margin .25s ease-out;
@@ -16,14 +17,12 @@ body {
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
 }
-
+.sidebar-heading{
+  font-size: 1.25rem!important
+}
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-}
-
-#sidebar-wrapper .list-group {
-  width: 15rem;
+  font-size: 12px;
 }
 
 #page-content-wrapper {

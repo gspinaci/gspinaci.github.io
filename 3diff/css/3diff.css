@@ -43,11 +43,11 @@ h1.mt-4 {
 
 div#container,
 nav {
-  margin-left: 240px;
+  margin-left: 320px;
 }
 
 div#container {
-  margin-left: 260px;
+  margin-left: 350px;
   width: 70% !important
 }
 
@@ -92,7 +92,7 @@ span[data-diff-type="semantic"].old_version>span>span.new {
 
 span[data-diff-type="semantic"].old_version>span>span.old {
   text-decoration: none;
-  display: initial!important;
+  display: initial !important;
   color: #212529 !important
 }
 
@@ -135,84 +135,93 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .punctuation>.badge {
-  background-color: #8F1D21
+  background-color: white;
+  color: #8F1D21 !important
 }
 
 .punctuation {
   color: #8F1D21;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .wordchange>.badge {
-  background-color: #003171
+  background-color: white;
+  color: #003171 !important
 }
 
 .wordchange {
   color: #003171;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .wordreplace>.badge {
-  background-color: #A17917
+  background-color: white;
+  color: #A17917 !important
 }
 
 .wordreplace {
   color: #A17917;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .textinsert_delete>.badge {
-  background-color: #044F67
+  background-color: white;
+  color: #044F67 !important
 }
 
 .textinsert_delete {
   color: #044F67;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .textreplace>.badge {
-  background-color: #006442
+  background-color: white;
+  color: #006442 !important
 }
 
 .textreplace {
   color: #006442;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .insert_delete>.badge {
-  background-color: #875F9A
+  background-color: white;
+  color: #875F9A !important
 }
 
 .insert_delete {
   color: #875F9A;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .wrap_unwrap>.badge {
-  background-color: #6C7A89
+  background-color: white;
+  color: #6C7A89 !important
 }
 
 .wrap_unwrap {
   color: #6C7A89;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .join_split>.badge {
-  background-color: #5D3F6A
+  background-color: white;
+  color: #5D3F6A !important
 }
 
 .join_split {
   color: #5D3F6A;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 .replace>.badge {
-  background-color: #264348
+  background-color: white;
+  color: #264348 !important
 }
 
 .replace {
   color: #264348;
-  margin-left: 40px
+  margin-left: 20px
 }
 
 span[data-diff-op="punctuation"]>span {

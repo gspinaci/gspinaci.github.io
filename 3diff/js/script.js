@@ -63,6 +63,8 @@ function stateOld() {
 
 $(document).ready(function () {
 
+  muteAllStructural()
+
   $('[href="#collapseStructural"],[href="#collapseSemantic"]').on('click', function () {
     $(this).find('i.fa-caret-down').toggleClass('invisible')
     $(this).find('i.fa-caret-right').toggleClass('invisible')

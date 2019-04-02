@@ -35,7 +35,7 @@
 
         <!-- Semantic -->
         <a class="list-group-item list-group-item-action bg-light">
-          Semantic
+          Semantic changes
           <button type="button" class="close" data-toggle="collapse" href="#collapseSemantic">
             <i class="fas fa-caret-down invisible"></i>
             <i class="fas fa-caret-right"></i>
@@ -55,7 +55,7 @@
             class="list-group-item list-group-item-action bg-light">
             <span style="margin-left:20px">
               <input class="form-check-input" onclick="changeStateSemantic('fix')" type="checkbox" checked>
-              Fix
+              Fixes
               <span class="float-right badge fix badge-pill">27</span>
             </span>
           </a>
@@ -65,7 +65,7 @@
             class="list-group-item list-group-item-action bg-light">
             <span style="margin-left:20px">
               <input class="form-check-input" onclick="changeStateSemantic('style')" type="checkbox" checked>
-              Style
+              Changes in style
               <span class="float-right badge style badge-pill">67</span>
             </span>
           </a>
@@ -75,7 +75,7 @@
             class="list-group-item list-group-item-action bg-light">
             <span style="margin-left:20px">
               <input class="form-check-input" onclick="changeStateSemantic('meaning')" type="checkbox" checked>
-              Meaning
+              Changes in meaning
               <span class="float-right badge meaning badge-pill">10</span>
             </span>
           </a>
@@ -85,15 +85,15 @@
             class="list-group-item list-group-item-action bg-light">
             <span style="margin-left:20px">
               <input class="form-check-input" onclick="changeStateSemantic('edit_chain')" type="checkbox" checked>
-              Edit chain
-              <span class="float-right badge edit_chain badge-pill">14</span>
+              Edit chains
+              <span class="float-right badge edit_chain badge-pill">1</span>
             </span>
           </a>
 
           <!-- Structural -->
           <a class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              Structural
+            <span>
+              Structural changes
               <button type="button" class="close" data-toggle="collapse" href="#collapseStructural">
                 <i class="fas fa-caret-down invisible"></i>
                 <i class="fas fa-caret-right"></i>
@@ -101,11 +101,11 @@
             </span>
           </a>
 
-          <div class="collapse show" id="collapseStructural">
+          <div class="collapse" id="collapseStructural">
 
             <a class="list-group-item list-group-item-action bg-light">
-              <span style="margin-left:40px">
-                <input class="form-check-input" id="changeStateStructural" type="checkbox" checked>
+              <span style="margin-left:20px">
+                <input class="form-check-input" id="changeStateStructural" type="checkbox">
                 All
               </span>
             </a>
@@ -114,7 +114,7 @@
             <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Change of the only punctuation"
               class="list-group-item list-group-item-action bg-light">
               <span class="punctuation">
-                <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox" checked>
+                <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox">
                 Punctuation
                 <span class="float-right badge badge-pill">25</span>
               </span>
@@ -125,8 +125,8 @@
               title="Change of a word without changing the overall word"
               class="list-group-item list-group-item-action bg-light">
               <span class="wordchange">
-                <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox" checked>
-                Wordchange
+                <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox">
+                Changes inside words
                 <span class="float-right badge badge-pill">39</span>
               </span>
             </a>
@@ -135,8 +135,8 @@
             <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
               title="Change of a entire word with another one" class="list-group-item list-group-item-action bg-light">
               <span class="wordreplace">
-                <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox" checked>
-                Wordreplace
+                <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox">
+                Replacements of single words
                 <span class="float-right badge badge-pill">20</span>
               </span>
             </a>
@@ -146,9 +146,8 @@
               title="Insert or delete of more words without markup"
               class="list-group-item list-group-item-action bg-light">
               <span class="textinsert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox"
-                  checked>
-                Textinsert/delete
+                <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox">
+                Insertions/deletions of text 
                 <span class="float-right badge badge-pill">11</span>
               </span>
             </a>
@@ -157,8 +156,8 @@
             <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
               title="Replacement of more words with others" class="list-group-item list-group-item-action bg-light">
               <span class="textreplace">
-                <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox" checked>
-                Textreplace
+                <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox">
+                Replacements of text
                 <span class="float-right badge badge-pill">10</span>
               </span>
             </a>
@@ -168,8 +167,7 @@
               title="Insert or delete of more nodes, eventually with text after or before"
               class="list-group-item list-group-item-action bg-light">
               <span class="insert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox"
-                  checked>
+                <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox">
                 Insert/Delete
                 <span class="float-right badge badge-pill">3</span>
               </span>
@@ -180,7 +178,7 @@
               title="Move of the content inside or outside a node (removing the node if needed). Without effecting the content"
               class="list-group-item list-group-item-action bg-light">
               <span class="wrap_unwrap">
-                <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox" checked>
+                <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox">
                 Wrap/Unwrap
                 <span class="float-right badge badge-pill">5</span>
               </span>
@@ -191,7 +189,7 @@
               title="Union or separation of two sibling nodes of the same type"
               class="list-group-item list-group-item-action bg-light">
               <span class="join_split">
-                <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox" checked>
+                <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox">
                 Join/Split
                 <span class="float-right badge badge-pill">2</span>
               </span>
@@ -202,7 +200,7 @@
               title="Substitution of a node with another one without effecting its content"
               class="list-group-item list-group-item-action bg-light">
               <span class="replace">
-                <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox" checked>
+                <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox">
                 Replace
                 <span class="float-right badge badge-pill">3</span>
               </span>
@@ -248,7 +246,7 @@
             </span> Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay
             crossed. A
             yellow dressinggown, ungirdled, was
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="fix">
               <span data-diff-type="structural" data-diff-op="wordchange">
                 <span class="new">sustained</span>
                 <span class="old">sustain</span>
@@ -289,7 +287,7 @@
             </span>
           </p>
           <p>
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="insert_delete">
                 <span class="new"><i>—Come up, Kinch! Come up, you fearful jesuit!</i></span>
                 <span class="old"></span>
@@ -326,7 +324,7 @@
               </span>
             </span>
             its length, and at the light untonsured hair
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textinsert_delete">
                 <span class="new">, grained and hued like pale oak</span>
                 <span class="old"></span>
@@ -351,7 +349,7 @@
           </p>
           <p>
             —For this
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textinsert_delete">
                 <span class="new">, O dearly beloved,</span>
                 <span class="old"></span>
@@ -413,7 +411,7 @@
             Switch off the current, will you?
           </p>
           <p>He skipped off the gunrest and looked gravely at his watcher,
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textreplace">
                 <span class="new">gathering about his legs the loose folds of his gown.</span>
                 <span class="old">the others.</span>
@@ -423,7 +421,7 @@
             pleasant smile broke quietly over his lips.
           </p>
           <p>
-            <span data-diff-type="semantic" data-diff-op="fix">
+            <span data-diff-type="semantic" data-diff-op="style">
               <span data-diff-type="structural" data-diff-op="join_split">
                 <span class="new"><i>—The mockery of it! he said gaily. Your absurd name, an ancient Greek!</i></span>
                 <span class="old"><i>—The mockery of it! he said gaily.</i><br><i>—An ancient Greek!</i></span>
@@ -446,7 +444,7 @@
               </span>
             </span>
             up, followed him wearily halfway and sat down on the edge of the gunrest,
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textreplace">
                 <span class="new">watching him still as he propped his mirror on the parapet,</span>
                 <span class="old">the parapeth</span>
@@ -492,7 +490,7 @@
           </p>
 
           <p>
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="insert_delete">
                 <span class="new"><i>He laid the brush aside and, laughing with delight, cried:</i></span>
                 <span class="old"></span>
@@ -572,7 +570,7 @@
             e said frankly. A ponderous Saxon. He thinks you’re not a gentleman. God, these
             bloody
             English! Bursting with money and indigestion.
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textinsert_delete">
                 <span class="new">Because he comes from Oxford.</span>
                 <span class="old"></span>
@@ -596,7 +594,7 @@
             .</p>
 
           <p>He
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textreplace">
                 <span class="new">shaved warily over his chin</span>
                 <span class="old">waited long time</span>
@@ -655,7 +653,7 @@
               </span>
             </span>
             . He hopped down from
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textreplace">
                 <span class="new">his perch and began to</span>
                 <span class="old">there</span>
@@ -915,7 +913,7 @@
                 <span class="old"></span>
               </span>
             </span> mute, reproachful,
-            <span data-diff-type="semantic" data-diff-op="style">
+            <span data-diff-type="semantic" data-diff-op="meaning">
               <span data-diff-type="structural" data-diff-op="textreplace">
                 <span class="new">a faint odour of wetted</span>
                 <span class="old">with a smell of</span>
