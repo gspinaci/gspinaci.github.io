@@ -9,11 +9,11 @@ span[data-diff-type="structural"]:hover>span.new, span[data-diff-type="structura
 }
 */
 
-span[data-diff-type="structural"] > span:after{
+span[data-diff-type="structural"]>span:after {
   content: ']'
 }
 
-span[data-diff-type="structural"] > span:before{
+span[data-diff-type="structural"]>span:before {
   content: '['
 }
 
@@ -41,21 +41,18 @@ h1.mt-4 {
   margin-bottom: 40px
 }
 
-body.dark {
-  background-color: #212529
+div#container,
+nav {
+  margin-left: 240px;
 }
 
-div#container.dark {
-  color: white
+div#container {
+  margin-left: 260px;
+  width: 70% !important
 }
 
-body.dark span.muted {
+.badge {
   color: white !important
-}
-
-body span.muted {
-  color: #212529 !important;
-  background-color: white !important
 }
 
 i.fas.invisible {
@@ -67,18 +64,25 @@ i.fas.invisible {
   z-index: 10;
 }
 
-.btn-dark,
-a.list-group-item.bg-dark,
-#sidebar-wrapper.bg-dark,
-a.list-group-item.bg-dark i {
-  color: white !important
+
+span[data-diff-type="semantic"].muted>span>span {
+  background-color: white !important
 }
 
-span.new.plain {
+span[data-diff-type="structural"].muted>span {
+  color: black !important
+}
+
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.new {
   position: initial !important;
 }
 
-span.old.plain {
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.old {
+  display: none;
+}
+
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::after,
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::before {
   display: none;
 }
 
@@ -140,11 +144,11 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .wrap_unwrap {
-  background-color: #A17917
+  background-color: #6C7A89
 }
 
 .join_split {
-  background-color: #044F67
+  background-color: #5D3F6A
 }
 
 .replace {
@@ -176,11 +180,11 @@ span[data-diff-op="insert_delete"]>span {
 }
 
 span[data-diff-op="wrap_unwrap"]>span {
-  color: #A17917
+  color: #6C7A89
 }
 
 span[data-diff-op="join_split"]>span {
-  color: #044F67
+  color: #5D3F6A
 }
 
 span[data-diff-op="replace"]>span {
