@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Diffs | Ulysses - Telemachus </title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/3diff.css">
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light" id="sidebar-wrapper">
+      <div class="sidebar-heading">Diff levels</div>
+      <div class="list-group list-group-flush" style="position:relative">
+
+        <!-- Semantic -->
+        <a class="list-group-item list-group-item-action bg-light">
+          Semantic changes
+          <button type="button" class="close" data-toggle="collapse" href="#collapseSemantic">
+            <i class="fas fa-caret-down"></i>
+            <i class="fas fa-caret-right invisible"></i>
+          </button>
+        </a>
+
+        <div class="collapse show" id="collapseSemantic">
+
+          <a class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" id="changeStateSemantic" type="checkbox" checked>
+              All
+            </span>
+          </a>
+
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Operations that fix a typo"
+            class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" onclick="changeStateSemantic('fix')" type="checkbox" checked>
+              Fixes
+              <span class="float-right badge fix badge-pill">27</span>
+            </span>
+          </a>
+
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Operations that change aspect and/or content of the document without changing the meaning"
+            class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" onclick="changeStateSemantic('style')" type="checkbox" checked>
+              Changes in style
+              <span class="float-right badge style badge-pill">58</span>
+            </span>
+          </a>
+
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Operations that change the meaning of the text"
+            class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" onclick="changeStateSemantic('meaning')" type="checkbox" checked>
+              Changes in meaning
+              <span class="float-right badge meaning badge-pill">20</span>
+            </span>
+          </a>
+
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Serie of equal or similar modifications often used automatically"
+            class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" onclick="changeStateSemantic('edit_chain')" type="checkbox" checked>
+              Edit chains
+              <span class="float-right badge edit_chain badge-pill">1</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Structural -->
+        <a class="list-group-item list-group-item-action bg-light">
+          <span>
+            Structural changes
+            <button type="button" class="close" data-toggle="collapse" href="#collapseStructural">
+              <i class="fas fa-caret-down invisible"></i>
+              <i class="fas fa-caret-right"></i>
+            </button>
+          </span>
+        </a>
+
+        <div class="collapse" id="collapseStructural">
+
+          <a class="list-group-item list-group-item-action bg-light">
+            <span style="margin-left:20px">
+              <input class="form-check-input" id="changeStateStructural" type="checkbox">
+              All
+            </span>
+          </a>
+
+          <!-- Punctuation -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Change of the only punctuation"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="punctuation">
+              <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox">
+              Punctuation
+              <span class="float-right badge badge-pill">25</span>
+            </span>
+          </a>
+
+          <!-- Wordchange -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Change of a word without changing the overall word"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="wordchange">
+              <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox">
+              Changes inside words
+              <span class="float-right badge badge-pill">39</span>
+            </span>
+          </a>
+
+          <!-- Wordreplace -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Change of a entire word with another one" class="list-group-item list-group-item-action bg-light">
+            <span class="wordreplace">
+              <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox">
+              Replacements of single words
+              <span class="float-right badge badge-pill">20</span>
+            </span>
+          </a>
+
+          <!-- Textinsert / Textdelete -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Insert or delete of more words without markup"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="textinsert_delete">
+              <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox">
+              Insertions/deletions of text
+              <span class="float-right badge badge-pill">11</span>
+            </span>
+          </a>
+
+          <!-- Textreplace-->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Replacement of more words with others" class="list-group-item list-group-item-action bg-light">
+            <span class="textreplace">
+              <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox">
+              Replacements of text
+              <span class="float-right badge badge-pill">10</span>
+            </span>
+          </a>
+
+          <!-- Insert/Delete -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Insert or delete of more nodes, eventually with text after or before"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="insert_delete">
+              <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox">
+              Insert/Delete
+              <span class="float-right badge badge-pill">3</span>
+            </span>
+          </a>
+
+          <!-- Wrap/Unwrap -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Move of the content inside or outside a node (removing the node if needed). Without effecting the content"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="wrap_unwrap">
+              <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox">
+              Wrap/Unwrap
+              <span class="float-right badge badge-pill">5</span>
+            </span>
+          </a>
+
+          <!-- Join/Split -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Union or separation of two sibling nodes of the same type"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="join_split">
+              <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox">
+              Join/Split
+              <span class="float-right badge badge-pill">2</span>
+            </span>
+          </a>
+
+          <!-- Replace -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Substitution of a node with another one without effecting its content"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="replace">
+              <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox">
+              Replace
+              <span class="float-right badge badge-pill">3</span>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="showOld" autocomplete="off"> OLD version
+          </label>
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="showCompare" autocomplete="off" checked> COMPARE versions
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="showNew" autocomplete="off"> NEW version
+          </label>
+        </div>
+      </nav>
+
+      <!-- Content here -->
+      <div class="container-fluid" id="container">
+        <h1 class="mt-4">Telemachus</h1>
+        <div>
+          <p>
+            Stately, plump
+            <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay
+            crossed. A
+            yellow dressinggown, ungirdled, was
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">sustained</span>
+                <span class="old">sustain</span>
+              </span>
+            </span>
+            gently behind him on the mild morning air. He
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">held</span>
+                <span class="old">kept</span>
+              </span>
+            </span>
+            the bowl aloft and intoned:
+          </p>
+          <p>
+            —Introibo ad altare Dei
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">;</span>
+                <span class="old">.</span>
+              </span>
+            </span>
+          </p>
+          <p>
+            Halted, he peered down the
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">dark</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            winding stairs and called out coarsely
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">:</span>
+                <span class="old">.</span>
+              </span>
+            </span>
+          </p>
+          <p>
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="insert_delete">
+                <span class="new"><i>—Come up, Kinch! Come up, you fearful jesuit!</i></span>
+                <span class="old"></span>
+              </span>
+            </span>
+
+          </p>
+          <p>
+            Solemnly he came forward and mounted the round gunrest. He faced about and blessed gravely thrice the tower,
+            the
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">surrounding</span>
+                <span class="old">wrapping</span>
+              </span>
+            </span>
+            land and the awaking mountains. Then, catching sight of
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">Stephen Dedalus</span>
+                <span class="old">Dedalus Stephen</span>
+              </span>
+            </span>
+            , he bent towards him and made
+            rapid crosses in the air, gurgling in his throat and shaking his head. Stephen Dedalus, displeased and
+            sleepy,
+            leaned his arms on the top of the staircase and looked coldly at the shaking gurgling face that blessed him,
+            equine
+            in
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new"></span>
+                <span class="old">a</span>
+              </span>
+            </span>
+            its length, and at the light untonsured hair
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">, grained and hued like pale oak</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            .
+          </p>
+          <p>
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">Buck Mulligan peeped an instant under the mirror</span>
+                <span class="old">Under the mirror, Buck Mulligan peeped an instant</span>
+              </span>
+            </span>
+            and then covered the bowl smartly.
+          </p>
+          <p>
+            <i>—Back to barracks! he said sternly.</i>
+          </p>
+          <p>
+            He added in a preacher’s tone:
+          </p>
+          <p>
+            —For this
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">, O dearly beloved,</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            is the genuine Christine: body and soul and blood and ouns. Slow music,
+            please
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">, s</span>
+                <span class="old">. S</span>
+              </span>
+            </span>
+            hut
+            your eyes, gents. One moment. A little trouble about those white corpuscles. Silence
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">,</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            all.
+          </p>
+          <p>
+            He peered sideways up and gave a long slow whistle of call, then
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">paused</span>
+                <span class="old">pause</span>
+              </span>
+            </span>
+            awhile in rapt attention, his even
+            white
+            teeth glistening
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">here and there</span>
+                <span class="old">there and here</span>
+              </span>
+            </span>
+            with gold points. Chrysostomos. Two strong shrill
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">whistles</span>
+                <span class="old">yells</span>
+              </span>
+            </span>
+            answered through
+            the
+            calm.
+          </p>
+          <p>
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wrap_unwrap">
+                <span class="new"><i>—Thanks, old chap, he cried briskly. That will do nicely.</i></span>
+                <span class="old">—Thanks, old chap, he cried briskly. That will do nicely.</span>
+              </span>
+            </span>
+            Switch off the current, will you?
+          </p>
+          <p>He skipped off the gunrest and looked gravely at his watcher,
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">gathering about his legs the loose folds of his gown.</span>
+                <span class="old">the others.</span>
+              </span>
+            </span>
+            The plump shadowed face and sullen oval jowl recalled a prelate, patron of arts in the middle ages.A
+            pleasant smile broke quietly over his lips.
+          </p>
+          <p>
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="join_split">
+                <span class="new"><i>—The mockery of it! he said gaily. Your absurd name, an ancient Greek!</i></span>
+                <span class="old"><i>—The mockery of it! he said gaily.</i><br><i>—An ancient Greek!</i></span>
+              </span>
+            </span>
+          </p>
+
+          <p>He pointed his finger in friendly jest and went over to the parapet, laughing to himself
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">.</span>
+                <span class="old">,</span>
+              </span>
+            </span>
+            Stephen Dedalus
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">stepped</span>
+                <span class="old">step</span>
+              </span>
+            </span>
+            up, followed him wearily halfway and sat down on the edge of the gunrest,
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">watching him still as he propped his mirror on the parapet,</span>
+                <span class="old">the parapeth</span>
+              </span>
+            </span>
+            dipped the brush in the bowl and lathered cheeks and neck.</p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan’s
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">gay</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            voice went on.</p>
+
+          <p>—My name is absurd too: Malachi Mulligan, two dactyls. But it has a
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="replace">
+                <span class="new"><b>Hellenic ring</b></span>
+                <span class="old"><i>Hellenic ring</i></span>
+              </span>
+            </span>
+            ,hasn’t it? Tripping and
+            sunny
+            like the <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> himself. We must go to Athens. Will you come if I can get the aunt to fork out twenty quid
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">?</span>
+                <span class="old">.</span>
+              </span>
+            </span>
+          </p>
+
+          <p>
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="insert_delete">
+                <span class="new"><i>He laid the brush aside and, laughing with delight, cried:</i></span>
+                <span class="old"></span>
+              </span>
+            </span>
+
+          </p>
+
+
+          <p>—Will he come? The
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">jejune</span>
+                <span class="old">june</span>
+              </span>
+            </span>
+            jesuit!</p>
+
+          <p>Ceasing, he
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">began</span>
+                <span class="old">started</span>
+              </span>
+            </span>
+            to shave with care.</p>
+
+          <p>
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wrap_unwrap">
+                <span class="new"><i>—Tell me, Mulligan, Stephen said quietly.</i></span>
+                <span class="old">—Tell me, Mulligan, Stephen said quietly.</span>
+              </span>
+            </span>
+          </p>
+
+          <p>
+            —Yes,
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">my</span>
+                <span class="old">My</span>
+              </span>
+            </span>
+            love
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">?</span>
+                <span class="old">.</span>
+              </span>
+            </span>
+          </p>
+
+          <p>—How long is
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">Haines</span>
+                <span class="old">him</span>
+              </span>
+            </span>
+            going to stay in this tower?</p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan showed a shaven cheek over his right shoulder.</p>
+
+          <p>—God, isn’t he dreadful
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">? h</span>
+                <span class="old">? H</span>
+              </span>
+            </span>
+            e said frankly. A ponderous Saxon. He thinks you’re not a gentleman. God, these
+            bloody
+            English! Bursting with money and indigestion.
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">Because he comes from Oxford.</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            You know, Dedalus, you have the
+            real
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Oxford</span>
+                <span class="old">oxford</span>
+              </span>
+            </span>
+            manner. He can’t make you out. O, my name for you is the best:
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wrap_unwrap">
+                <span class="new"><b>Kinch, the knife-blade</b></span>
+                <span class="old">Kinch, the knife-blade</span>
+              </span>
+            </span>
+            .</p>
+
+          <p>He
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">shaved warily over his chin</span>
+                <span class="old">waited long time</span>
+              </span>
+            </span>
+            .</p>
+
+          <p>—He was raving all night about a black panther
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="insert_delete">
+                <span class="new"><i>, Stephen said</i></span>
+                <span class="old"></span>
+              </span>
+            </span>
+            . Where is his guncase?</p>
+
+          <p>—A woful
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">lunatic</span>
+                <span class="old">mad</span>
+              </span>
+            </span>
+            ! Mulligan said
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">. W</span>
+                <span class="old">, w</span>
+              </span>
+            </span>ere you in a funk?</p>
+
+
+          <p>—I was, Stephen said with energy and growing fear. Out here in the dark with a man I don’t know raving and
+            moaning
+            to himself about shooting a black panther. You saved men from drowning.
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wrap_unwrap">
+                <span class="new">I’m not a hero</span>
+                <span class="old"><b>I’m not a hero</b></span>
+              </span>
+            </span>
+            , however. If he stays
+            on here
+            I am off.</p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan frowned at the lather on his
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">razorblade</span>
+                <span class="old">knife</span>
+              </span>
+            </span>
+            . He hopped down from
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">his perch and began to</span>
+                <span class="old">there</span>
+              </span>
+            </span>
+            search his trouser pockets hastily.</p>
+
+          <p>
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">—Scutter!</span>
+                <span class="old"></span>
+              </span>
+            </span>
+            He cried thickly.</p>
+
+          <p>He came over to the gunrest and,
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">thrusting</span>
+                <span class="old">thrusing</span>
+              </span>
+            </span>
+            a hand into Stephen’s upper pocket, said:</p>
+
+          <p>—Lend us a <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">loan</span>
+                <span class="old">lean</span>
+              </span>
+            </span> of your noserag to wipe my razor.</p>
+
+          <p>Stephen suffered him to pull out and <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">hold</span>
+                <span class="old">held</span>
+              </span>
+            </span> up on show by its corner a dirty crumpled
+            handkerchief
+            . <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span>
+            Mulligan
+            wiped the razorblade neatly. Then, gazing over the handkerchief, he said:</p>
+
+          <p>
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">—The bard’s noserag!</span>
+                <span class="old"></span>
+              </span>
+            </span>
+
+            A new art colour for our Irish poets: snotgreen. You can almost taste it, can’t you
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">?</span>
+                <span class="old">.</span>
+              </span>
+            </span>
+          </p>
+
+          <p>He mounted to the parapet again and gazed
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">out</span>
+                <span class="old">otu</span>
+              </span>
+            </span> over Dublin bay, his fair oakpale hair stirring slightly.</p>
+
+          <p>—God! he said quietly. Isn’t the sea what Algy calls it: a great sweet mother? <span
+              data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new"></span>
+                <span class="old">That is </span>
+              </span>
+            </span>The snotgreen sea. The
+            scrotumtightening sea. Epi oinopa ponton. Ah, Dedalus, the
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Greeks</span>
+                <span class="old">Greek</span>
+              </span>
+            </span>! I must <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">teach</span>
+                <span class="old">learn</span>
+              </span>
+            </span> you. You must read them in
+            the
+            original. Thalatta! Thalatta! She is our great <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">sweet</span>
+                <span class="old">graceful</span>
+              </span>
+            </span> mother. Come and look.</p>
+
+          <p>Stephen stood up and went over to the <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">parapeth</span>
+                <span class="old">paraptr</span>
+              </span>
+            </span>.
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">Leaning on it he looked down on the water</span>
+                <span class="old"></span>
+              </span>
+            </span> and on the
+            mailboat
+            clearing the harbourmouth of Kingstown.</p>
+
+          <p>—Our mighty mother
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">!</span>
+                <span class="old">.</span>
+              </span>
+            </span> <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan said.</p>
+
+          <p>He turned abruptly his grey <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">searching</span>
+                <span class="old">investigating</span>
+              </span>
+            </span> eyes from the sea to Stephen’s face.</p>
+
+          <p>—The aunt thinks you killed your mother
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">,</span>
+                <span class="old"></span>
+              </span>
+            </span> he said. That’s why she won’t let me have
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">anything</span>
+                <span class="old">antingh</span>
+              </span>
+            </span> to do with you.
+          </p>
+
+          <p>—Someone <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">killed</span>
+                <span class="old">murdered</span>
+              </span>
+            </span> her, Stephen said gloomily.</p>
+
+          <p>—You could have knelt down, damn it, Kinch, when your dying mother asked you,
+            <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan said
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">. I</span>
+                <span class="old">, </span>
+              </span>
+            </span>’m
+            hyperborean
+            as much as you. But to think of your mother begging you with her last breath to <span
+              data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">kneel</span>
+                <span class="old">kee</span>
+              </span>
+            </span> down and pray for her.
+            And you
+            refused. There is something <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">sinister</span>
+                <span class="old">mysterious</span>
+              </span>
+            </span> in you
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">....</span>
+                <span class="old">...</span>
+              </span>
+            </span></p>
+
+          <p>He broke off and lathered again lightly his farther cheek. A tolerant smile curled his lips.</p>
+
+          <p>—But a lovely
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">mummer</span>
+                <span class="old">munner</span>
+              </span>
+            </span>! he murmured to himself.
+
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textinsert_delete">
+                <span class="new">Kinch, the loveliest mummer of them all!</span>
+                <span class="old"></span>
+              </span>
+            </span></p>
+
+          <p>He shaved
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">evenly and with care, in silence,</span>
+                <span class="old">in silcen</span>
+              </span>
+            </span>
+            seriously.</p>
+
+          <p>Stephen, an elbow rested on the jagged
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">granite</span>
+                <span class="old">marble</span>
+              </span>
+            </span>, leaned his palm against his brow and gazed at the fraying
+            edge of
+            his shiny black coat-sleeve.
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Pain</span>
+                <span class="old">pain</span>
+              </span>
+            </span>, that was not yet the pain of <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">love</span>
+                <span class="old">lov</span>
+              </span>
+            </span>, fretted his heart. Silently, in a
+            dream she
+            had come to him after her death, her wasted body
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">within its loose brown graveclothes</span>
+                <span class="old">with a different idea</span>
+              </span>
+            </span> giving off an odour of
+            wax and
+            rosewood <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">, h</span>
+                <span class="old">. H</span>
+              </span>
+            </span>er breath, that had bent upon him
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">,</span>
+                <span class="old"></span>
+              </span>
+            </span> mute, reproachful,
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="textreplace">
+                <span class="new">a faint odour of wetted</span>
+                <span class="old">with a smell of</span>
+              </span>
+            </span>
+            ashes. Across the
+            threadbare cuffedge he saw the sea hailed as a great
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">sweet</span>
+                <span class="old">sweat</span>
+              </span>
+            </span> mother by the wellfed voice beside him. The ring
+            of bay
+            and
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">skyline</span>
+                <span class="old">skylin</span>
+              </span>
+            </span>
+            held a dull green mass of liquid. A bowl of <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">white</span>
+                <span class="old">withe</span>
+              </span>
+            </span> china had stood beside her deathbed holding
+            the green
+            sluggish bile which she had torn up from her rotting liver by fits of loud
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">groaning</span>
+                <span class="old">groan</span>
+              </span>
+            </span> vomiting
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">.</span>
+                <span class="old">!</span>
+              </span>
+            </span></p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan wiped again his <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">razorblade</span>
+                <span class="old">knife</span>
+              </span>
+            </span>.</p>
+
+          <p>—Ah, poor dogsbody <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">!</span>
+                <span class="old">...</span>
+              </span>
+            </span> he said in a kind voice. I must give you a shirt and a
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">few</span>
+                <span class="old">fev</span>
+              </span>
+            </span> noserags. How are the
+            secondhand
+            breeks?</p>
+
+          <p>—They fit well enough, <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Stephen</span>
+                <span class="old">stephen</span>
+              </span>
+            </span> answered.</p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan attacked the hollow beneath his underlip.</p>
+
+          <p>—The mockery of it, he said contentedly. Secondleg they should be. God knows what poxy <span
+              data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">bowsy</span>
+                <span class="old">boswy</span>
+              </span>
+            </span> left them off.
+            I have
+            a lovely pair with a hair stripe, grey. You’ll look spiffing in them. I’m not
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">joking</span>
+                <span class="old">jonking</span>
+              </span>
+            </span>, Kinch. You look damn
+            well when
+            you’re dressed.</p>
+
+          <p>—Thanks <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">,</span>
+                <span class="old"></span>
+              </span>
+            </span> Stephen said. I can’t wear them if they are grey.</p>
+
+          <p>—He can’t wear them, <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan told his face in the mirror. Etiquette is etiquette
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">.</span>
+                <span class="old">!</span>
+              </span>
+            </span> He kills his mother
+            but he
+            can’t wear grey trousers.</p>
+
+          <p>He folded his razor neatly and with stroking palps of fingers felt the smooth skin.</p>
+
+          <p>Stephen turned his gaze from the sea and to the plump face with its smokeblue mobile eyes.</p>
+
+          <p>—That fellow I was with in the Ship last night, said <span data-diff-type="semantic"
+              data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan, says you have g. p. i. He’s up in
+            Dottyville
+            with Connolly Norman
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">. G</span>
+                <span class="old">: g</span>
+              </span>
+            </span>
+            eneral paralysis of the insane!</p>
+
+          <p>He swept the mirror a half circle in the air to flash the
+            <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">tidings</span>
+                <span class="old">tidngs</span>
+              </span>
+            </span> abroad in sunlight now radiant on the
+            sea. His
+            curling shaven lips laughed and the edges of his <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">white</span>
+                <span class="old">withe</span>
+              </span>
+            </span> glittering teeth. Laughter seized <span data-diff-type="semantic" data-diff-op="fix">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">all</span>
+                <span class="old">alls</span>
+              </span>
+            </span> his strong
+            wellknit
+            trunk.</p>
+
+          <p>—Look at yourself, he said, you dreadful bard
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">!</span>
+                <span class="old">.</span>
+              </span>
+            </span></p>
+
+          <p>Stephen bent forward and peered at the
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">mirror</span>
+                <span class="old">glass</span>
+              </span>
+            </span> held out to him, cleft by a crooked crack. Hair on end. As he
+            and
+            others see me. Who chose this face for me? This dogsbody to rid of vermin. It asks me too.</p>
+
+          <p>—I pinched it out of the skivvy’s room,
+            <span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan said. It does her all right. The aunt always keeps
+            plainlooking servants for Malachi. Lead him not into temptation. And her name is Ursula.</p>
+
+          <p> <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="join_split">
+                <span class="new"><span>Laughing again, he brought the mirror</span></span>
+                <span class="old"><span>Laughing again,</span><br><span>he brought the mirror</span></span>
+              </span>
+            </span>
+            away from Stephen’s peering eyes.
+          </p>
+          <p>—The rage
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wrap_unwrap">
+                <span class="new">of <b>Caliban</b></span>
+                <span class="old">Caliban</span>
+              </span>
+            </span>
+            at not seeing his face in a mirror, he said. If Wilde were only alive to see
+            you!
+          </p>
+
+          <p>Drawing back and pointing, Stephen said with bitterness
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">:</span>
+                <span class="old">...</span>
+              </span>
+            </span>
+          </p>
+
+          <p>—It is a symbol of Irish art. The cracked lookingglass of a servant.</p>
+
+          <p><span data-diff-type="semantic" data-diff-op="edit_chain">
+              <span data-diff-type="structural" data-diff-op="wordchange">
+                <span class="new">Buck</span>
+                <span class="old">buck</span>
+              </span>
+            </span> Mulligan suddenly linked his arm in Stephen’s and walked with him round the tower, his razor and
+            mirror
+            clacking in the pocket where he had thrust them.</p>
+
+          <p>—It’s not fair to
+            <span data-diff-type="semantic" data-diff-op="meaning">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">tease</span>
+                <span class="old">taste</span>
+              </span>
+            </span>
+            you like that, Kinch, is it? he said kindly. God knows you have more spirit than
+            any of
+            them.</p>
+
+          <p>Parried again. He fears the lancet of my art as I fear that of his. The cold steel
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="wordreplace">
+                <span class="new">pen</span>
+                <span class="old">stylus</span>
+              </span>
+            </span>.</p>
+
+          <p>—Cracked lookingglass of a
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="replace">
+                <span class="new"><i>servant!</i></span>
+                <span class="old"><b>servant!</b></span>
+              </span>
+            </span> Tell that to the oxy chap downstairs and touch him for a guinea. He’s
+            stinking
+            with money and thinks you’re not a gentleman. His old fellow made his tin by selling jalap to Zulus or some
+            bloody
+            swindle or other. God <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">,</span>
+                <span class="old"></span>
+              </span>
+            </span> Kinch, if you and I could
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="replace">
+                <span class="new"><u>only work together we might</u></span>
+                <span class="old"><b>only work together we might</b></span>
+              </span>
+            </span>
+            do something for the island.
+            Hellenise
+            it.</p>
+
+          <p>Cranly’s arm
+            <span data-diff-type="semantic" data-diff-op="style">
+              <span data-diff-type="structural" data-diff-op="punctuation">
+                <span class="new">.</span>
+                <span class="old">:</span>
+              </span>
+            </span> His arm.</p>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <script src="js/script.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

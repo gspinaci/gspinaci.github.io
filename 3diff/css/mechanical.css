@@ -64,11 +64,11 @@ h1.mt-4 {
 
 div#container,
 nav {
-  margin-left: 240px;
+  margin-left: 320px;
 }
 
 div#container {
-  margin-left: 260px;
+  margin-left: 350px;
   width: 70% !important
 }
 
@@ -83,26 +83,4 @@ i.fas.invisible {
 #sidebar-wrapper {
   position: fixed;
   z-index: 10;
-}
-
-
-span[data-diff-type="semantic"].muted>span>span {
-  background-color: white !important
-}
-
-span[data-diff-type="structural"].muted>span {
-  color: #212529 !important
-}
-
-span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.new {
-  position: initial !important;
-}
-
-span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.old {
-  display: none;
-}
-
-span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::after,
-span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::before {
-  display: none;
 }
