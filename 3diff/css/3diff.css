@@ -1,0 +1,188 @@
+span[data-diff-type="structural"] {
+  display: inline;
+  position: relative;
+}
+
+/*
+span[data-diff-type="structural"]:hover>span.new, span[data-diff-type="structural"]:hover>span.old{
+  filter: brightness(130%)
+}
+*/
+
+span[data-diff-type="structural"] > span:after{
+  content: ']'
+}
+
+span[data-diff-type="structural"] > span:before{
+  content: '['
+}
+
+
+span.old {
+  text-decoration: line-through;
+}
+
+span.new,
+span.old {
+  white-space: pre;
+  line-height: initial
+}
+
+span[data-diff-type="structural"]>span.new {
+  position: absolute;
+  top: -25px
+}
+
+p {
+  line-height: 300%
+}
+
+h1.mt-4 {
+  margin-bottom: 40px
+}
+
+body.dark {
+  background-color: #212529
+}
+
+div#container.dark {
+  color: white
+}
+
+body.dark span.muted {
+  color: white !important
+}
+
+body span.muted {
+  color: #212529 !important;
+  background-color: white !important
+}
+
+i.fas.invisible {
+  display: none
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  z-index: 10;
+}
+
+.btn-dark,
+a.list-group-item.bg-dark,
+#sidebar-wrapper.bg-dark,
+a.list-group-item.bg-dark i {
+  color: white !important
+}
+
+span.new.plain {
+  position: initial !important;
+}
+
+span.old.plain {
+  display: none;
+}
+
+.style {
+  background-color: #F47983
+}
+
+.fix {
+  background-color: #89C4F4
+}
+
+.meaning {
+  background-color: #4DAF7C
+}
+
+.edit_chain {
+  background-color: #F5D76E;
+}
+
+/* Text colors */
+span[data-diff-op="style"]>span>span {
+  background-color: #F47983
+}
+
+span[data-diff-op="fix"]>span>span {
+  background-color: #89C4F4
+}
+
+span[data-diff-op="meaning"]>span>span {
+  background-color: #4DAF7C
+}
+
+span[data-diff-op="edit_chain"]>span>span {
+  background-color: #F5D76E
+}
+
+.punctuation {
+  background-color: #8F1D21
+}
+
+.wordchange {
+  background-color: #003171
+}
+
+.wordreplace {
+  background-color: #A17917
+}
+
+.textinsert_delete {
+  background-color: #044F67
+}
+
+.textreplace {
+  background-color: #006442
+}
+
+.insert_delete {
+  background-color: #875F9A
+}
+
+.wrap_unwrap {
+  background-color: #A17917
+}
+
+.join_split {
+  background-color: #044F67
+}
+
+.replace {
+  background-color: #264348
+}
+
+span[data-diff-op="punctuation"]>span {
+  color: #8F1D21
+}
+
+span[data-diff-op="wordchange"]>span {
+  color: #003171
+}
+
+span[data-diff-op="wordreplace"]>span {
+  color: #A17917
+}
+
+span[data-diff-op="textinsert_delete"]>span {
+  color: #044F67
+}
+
+span[data-diff-op="textreplace"]>span {
+  color: #006442
+}
+
+span[data-diff-op="insert_delete"]>span {
+  color: #875F9A
+}
+
+span[data-diff-op="wrap_unwrap"]>span {
+  color: #A17917
+}
+
+span[data-diff-op="join_split"]>span {
+  color: #044F67
+}
+
+span[data-diff-op="replace"]>span {
+  color: #264348
+}
