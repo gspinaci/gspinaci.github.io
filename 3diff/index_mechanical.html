@@ -16,7 +16,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/3diff.css">
+  <link rel="stylesheet" href="css/mechanical.css">
 
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -35,7 +35,7 @@
 
         <!-- Semantic -->
         <a class="list-group-item list-group-item-action bg-light">
-          Semantic
+          Mechanical
           <button type="button" class="close" data-toggle="collapse" href="#collapseSemantic">
             <i class="fas fa-caret-down invisible"></i>
             <i class="fas fa-caret-right"></i>
@@ -44,171 +44,22 @@
 
         <div class="collapse show" id="collapseSemantic">
 
-          <a class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              <input class="form-check-input" id="changeStateSemantic" type="checkbox" checked>
-              All
-            </span>
-          </a>
-
           <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Operations that fix a typo"
             class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              <input class="form-check-input" onclick="changeStateSemantic('fix')" type="checkbox" checked>
-              Fix
-              <span class="float-right badge fix badge-pill">27</span>
+            <span class="ins">
+              INS
+              <span class="float-right badge  badge-pill">118</span>
             </span>
           </a>
 
           <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
             title="Operations that change aspect and/or content of the document without changing the meaning"
             class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              <input class="form-check-input" onclick="changeStateSemantic('style')" type="checkbox" checked>
-              Style
-              <span class="float-right badge style badge-pill">67</span>
+            <span class="del">
+              DEL
+              <span class="float-right badge badge-pill">118</span>
             </span>
           </a>
-
-          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-            title="Operations that change the meaning of the text"
-            class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              <input class="form-check-input" onclick="changeStateSemantic('meaning')" type="checkbox" checked>
-              Meaning
-              <span class="float-right badge meaning badge-pill">10</span>
-            </span>
-          </a>
-
-          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-            title="Serie of equal or similar modifications often used automatically"
-            class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              <input class="form-check-input" onclick="changeStateSemantic('edit_chain')" type="checkbox" checked>
-              Edit chain
-              <span class="float-right badge edit_chain badge-pill">14</span>
-            </span>
-          </a>
-
-          <!-- Structural -->
-          <a class="list-group-item list-group-item-action bg-light">
-            <span style="margin-left:20px">
-              Structural
-              <button type="button" class="close" data-toggle="collapse" href="#collapseStructural">
-                <i class="fas fa-caret-down invisible"></i>
-                <i class="fas fa-caret-right"></i>
-              </button>
-            </span>
-          </a>
-
-          <div class="collapse show" id="collapseStructural">
-
-            <a class="list-group-item list-group-item-action bg-light">
-              <span style="margin-left:40px">
-                <input class="form-check-input" id="changeStateStructural" type="checkbox" checked>
-                All
-              </span>
-            </a>
-
-            <!-- Punctuation -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Change of the only punctuation"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="punctuation">
-                <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox" checked>
-                Punctuation
-                <span class="float-right badge badge-pill">25</span>
-              </span>
-            </a>
-
-            <!-- Wordchange -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Change of a word without changing the overall word"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="wordchange">
-                <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox" checked>
-                Wordchange
-                <span class="float-right badge badge-pill">39</span>
-              </span>
-            </a>
-
-            <!-- Wordreplace -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Change of a entire word with another one" class="list-group-item list-group-item-action bg-light">
-              <span class="wordreplace">
-                <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox" checked>
-                Wordreplace
-                <span class="float-right badge badge-pill">20</span>
-              </span>
-            </a>
-
-            <!-- Textinsert / Textdelete -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Insert or delete of more words without markup"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="textinsert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox"
-                  checked>
-                Textinsert/delete
-                <span class="float-right badge badge-pill">11</span>
-              </span>
-            </a>
-
-            <!-- Textreplace-->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Replacement of more words with others" class="list-group-item list-group-item-action bg-light">
-              <span class="textreplace">
-                <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox" checked>
-                Textreplace
-                <span class="float-right badge badge-pill">10</span>
-              </span>
-            </a>
-
-            <!-- Insert/Delete -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Insert or delete of more nodes, eventually with text after or before"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="insert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox"
-                  checked>
-                Insert/Delete
-                <span class="float-right badge badge-pill">3</span>
-              </span>
-            </a>
-
-            <!-- Wrap/Unwrap -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Move of the content inside or outside a node (removing the node if needed). Without effecting the content"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="wrap_unwrap">
-                <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox" checked>
-                Wrap/Unwrap
-                <span class="float-right badge badge-pill">5</span>
-              </span>
-            </a>
-
-            <!-- Join/Split -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Union or separation of two sibling nodes of the same type"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="join_split">
-                <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox" checked>
-                Join/Split
-                <span class="float-right badge badge-pill">2</span>
-              </span>
-            </a>
-
-            <!-- Replace -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Substitution of a node with another one without effecting its content"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="replace">
-                <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox" checked>
-                Replace
-                <span class="float-right badge badge-pill">3</span>
-              </span>
-            </a>
-
-          </div>
 
         </div>
 

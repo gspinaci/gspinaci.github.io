@@ -51,7 +51,6 @@ div#container {
   width: 70% !important
 }
 
-
 .badge {
   color: white !important
 }
@@ -71,7 +70,7 @@ span[data-diff-type="semantic"].muted>span>span {
 }
 
 span[data-diff-type="structural"].muted>span {
-  color: black !important
+  color: #212529 !important
 }
 
 span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.new {
@@ -84,6 +83,21 @@ span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>sp
 
 span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::after,
 span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::before {
+  display: none;
+}
+
+span[data-diff-type="semantic"].old_version>span>span.new {
+  display: none;
+}
+
+span[data-diff-type="semantic"].old_version>span>span.old {
+  text-decoration: none;
+  display: initial!important;
+  color: #212529 !important
+}
+
+span[data-diff-type="semantic"].old_version>span>span::after,
+span[data-diff-type="semantic"].old_version>span>span::before {
   display: none;
 }
 
@@ -120,40 +134,85 @@ span[data-diff-op="edit_chain"]>span>span {
   background-color: #F5D76E
 }
 
-.punctuation {
+.punctuation>.badge {
   background-color: #8F1D21
 }
 
-.wordchange {
+.punctuation {
+  color: #8F1D21;
+  margin-left: 40px
+}
+
+.wordchange>.badge {
   background-color: #003171
 }
 
-.wordreplace {
+.wordchange {
+  color: #003171;
+  margin-left: 40px
+}
+
+.wordreplace>.badge {
   background-color: #A17917
 }
 
-.textinsert_delete {
+.wordreplace {
+  color: #A17917;
+  margin-left: 40px
+}
+
+.textinsert_delete>.badge {
   background-color: #044F67
 }
 
-.textreplace {
+.textinsert_delete {
+  color: #044F67;
+  margin-left: 40px
+}
+
+.textreplace>.badge {
   background-color: #006442
 }
 
-.insert_delete {
+.textreplace {
+  color: #006442;
+  margin-left: 40px
+}
+
+.insert_delete>.badge {
   background-color: #875F9A
 }
 
-.wrap_unwrap {
+.insert_delete {
+  color: #875F9A;
+  margin-left: 40px
+}
+
+.wrap_unwrap>.badge {
   background-color: #6C7A89
 }
 
-.join_split {
+.wrap_unwrap {
+  color: #6C7A89;
+  margin-left: 40px
+}
+
+.join_split>.badge {
   background-color: #5D3F6A
 }
 
-.replace {
+.join_split {
+  color: #5D3F6A;
+  margin-left: 40px
+}
+
+.replace>.badge {
   background-color: #264348
+}
+
+.replace {
+  color: #264348;
+  margin-left: 40px
 }
 
 span[data-diff-op="punctuation"]>span {
