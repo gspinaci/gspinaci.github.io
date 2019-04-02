@@ -89,124 +89,123 @@
               <span class="float-right badge edit_chain badge-pill">1</span>
             </span>
           </a>
+        </div>
 
-          <!-- Structural -->
+        <!-- Structural -->
+        <a class="list-group-item list-group-item-action bg-light">
+          <span>
+            Structural changes
+            <button type="button" class="close" data-toggle="collapse" href="#collapseStructural">
+              <i class="fas fa-caret-down invisible"></i>
+              <i class="fas fa-caret-right"></i>
+            </button>
+          </span>
+        </a>
+
+        <div class="collapse" id="collapseStructural">
+
           <a class="list-group-item list-group-item-action bg-light">
-            <span>
-              Structural changes
-              <button type="button" class="close" data-toggle="collapse" href="#collapseStructural">
-                <i class="fas fa-caret-down invisible"></i>
-                <i class="fas fa-caret-right"></i>
-              </button>
+            <span style="margin-left:20px">
+              <input class="form-check-input" id="changeStateStructural" type="checkbox">
+              All
             </span>
           </a>
 
-          <div class="collapse" id="collapseStructural">
+          <!-- Punctuation -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Change of the only punctuation"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="punctuation">
+              <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox">
+              Punctuation
+              <span class="float-right badge badge-pill">25</span>
+            </span>
+          </a>
 
-            <a class="list-group-item list-group-item-action bg-light">
-              <span style="margin-left:20px">
-                <input class="form-check-input" id="changeStateStructural" type="checkbox">
-                All
-              </span>
-            </a>
+          <!-- Wordchange -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Change of a word without changing the overall word"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="wordchange">
+              <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox">
+              Changes inside words
+              <span class="float-right badge badge-pill">39</span>
+            </span>
+          </a>
 
-            <!-- Punctuation -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover" title="Change of the only punctuation"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="punctuation">
-                <input class="form-check-input" onchange="changeStateStructural('punctuation')" type="checkbox">
-                Punctuation
-                <span class="float-right badge badge-pill">25</span>
-              </span>
-            </a>
+          <!-- Wordreplace -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Change of a entire word with another one" class="list-group-item list-group-item-action bg-light">
+            <span class="wordreplace">
+              <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox">
+              Replacements of single words
+              <span class="float-right badge badge-pill">20</span>
+            </span>
+          </a>
 
-            <!-- Wordchange -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Change of a word without changing the overall word"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="wordchange">
-                <input class="form-check-input" onchange="changeStateStructural('wordchange')" type="checkbox">
-                Changes inside words
-                <span class="float-right badge badge-pill">39</span>
-              </span>
-            </a>
+          <!-- Textinsert / Textdelete -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Insert or delete of more words without markup"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="textinsert_delete">
+              <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox">
+              Insertions/deletions of text
+              <span class="float-right badge badge-pill">11</span>
+            </span>
+          </a>
 
-            <!-- Wordreplace -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Change of a entire word with another one" class="list-group-item list-group-item-action bg-light">
-              <span class="wordreplace">
-                <input class="form-check-input" onclick="changeStateStructural('wordreplace')" type="checkbox">
-                Replacements of single words
-                <span class="float-right badge badge-pill">20</span>
-              </span>
-            </a>
+          <!-- Textreplace-->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Replacement of more words with others" class="list-group-item list-group-item-action bg-light">
+            <span class="textreplace">
+              <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox">
+              Replacements of text
+              <span class="float-right badge badge-pill">10</span>
+            </span>
+          </a>
 
-            <!-- Textinsert / Textdelete -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Insert or delete of more words without markup"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="textinsert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('textinsert_delete')" type="checkbox">
-                Insertions/deletions of text 
-                <span class="float-right badge badge-pill">11</span>
-              </span>
-            </a>
+          <!-- Insert/Delete -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Insert or delete of more nodes, eventually with text after or before"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="insert_delete">
+              <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox">
+              Insert/Delete
+              <span class="float-right badge badge-pill">3</span>
+            </span>
+          </a>
 
-            <!-- Textreplace-->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Replacement of more words with others" class="list-group-item list-group-item-action bg-light">
-              <span class="textreplace">
-                <input class="form-check-input" onclick="changeStateStructural('textreplace')" type="checkbox">
-                Replacements of text
-                <span class="float-right badge badge-pill">10</span>
-              </span>
-            </a>
+          <!-- Wrap/Unwrap -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Move of the content inside or outside a node (removing the node if needed). Without effecting the content"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="wrap_unwrap">
+              <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox">
+              Wrap/Unwrap
+              <span class="float-right badge badge-pill">5</span>
+            </span>
+          </a>
 
-            <!-- Insert/Delete -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Insert or delete of more nodes, eventually with text after or before"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="insert_delete">
-                <input class="form-check-input" onclick="changeStateStructural('insert_delete')" type="checkbox">
-                Insert/Delete
-                <span class="float-right badge badge-pill">3</span>
-              </span>
-            </a>
+          <!-- Join/Split -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Union or separation of two sibling nodes of the same type"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="join_split">
+              <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox">
+              Join/Split
+              <span class="float-right badge badge-pill">2</span>
+            </span>
+          </a>
 
-            <!-- Wrap/Unwrap -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Move of the content inside or outside a node (removing the node if needed). Without effecting the content"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="wrap_unwrap">
-                <input class="form-check-input" onclick="changeStateStructural('wrap_unwrap')" type="checkbox">
-                Wrap/Unwrap
-                <span class="float-right badge badge-pill">5</span>
-              </span>
-            </a>
-
-            <!-- Join/Split -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Union or separation of two sibling nodes of the same type"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="join_split">
-                <input class="form-check-input" onclick="changeStateStructural('join_split')" type="checkbox">
-                Join/Split
-                <span class="float-right badge badge-pill">2</span>
-              </span>
-            </a>
-
-            <!-- Replace -->
-            <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
-              title="Substitution of a node with another one without effecting its content"
-              class="list-group-item list-group-item-action bg-light">
-              <span class="replace">
-                <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox">
-                Replace
-                <span class="float-right badge badge-pill">3</span>
-              </span>
-            </a>
-
-          </div>
+          <!-- Replace -->
+          <a data-toggle="tooltip" data-placement="top" data-trigger="hover"
+            title="Substitution of a node with another one without effecting its content"
+            class="list-group-item list-group-item-action bg-light">
+            <span class="replace">
+              <input class="form-check-input" onclick="changeStateStructural('replace')" type="checkbox">
+              Replace
+              <span class="float-right badge badge-pill">3</span>
+            </span>
+          </a>
 
         </div>
 
