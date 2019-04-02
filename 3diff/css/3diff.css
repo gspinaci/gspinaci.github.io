@@ -140,7 +140,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .punctuation {
-  color: #8F1D21;
   margin-left: 20px
 }
 
@@ -150,7 +149,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .wordchange {
-  color: #003171;
   margin-left: 20px
 }
 
@@ -160,7 +158,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .wordreplace {
-  color: #A17917;
   margin-left: 20px
 }
 
@@ -170,7 +167,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .textinsert_delete {
-  color: #044F67;
   margin-left: 20px
 }
 
@@ -180,7 +176,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .textreplace {
-  color: #006442;
   margin-left: 20px
 }
 
@@ -190,7 +185,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .insert_delete {
-  color: #875F9A;
   margin-left: 20px
 }
 
@@ -200,7 +194,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .wrap_unwrap {
-  color: #6C7A89;
   margin-left: 20px
 }
 
@@ -210,7 +203,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .join_split {
-  color: #5D3F6A;
   margin-left: 20px
 }
 
@@ -220,7 +212,6 @@ span[data-diff-op="edit_chain"]>span>span {
 }
 
 .replace {
-  color: #264348;
   margin-left: 20px
 }
 
