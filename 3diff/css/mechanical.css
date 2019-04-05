@@ -36,11 +36,11 @@ span.old {
 }
 
 .ins>.badge {
-  background-color: #049372
+  background-color: #049372!important
 }
 
 .del>.badge {
-  background-color: #F62459
+  background-color: #F62459!important
 }
 
 span.new,
@@ -83,4 +83,21 @@ i.fas.invisible {
 #sidebar-wrapper {
   position: fixed;
   z-index: 10;
+}
+
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.new {
+  position: initial !important;
+}
+
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span.old {
+  display: none;
+}
+
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::after,
+span[data-diff-type="semantic"].muted>span[data-diff-type="structural"].muted>span::before {
+  display: none;
+}
+
+span[data-diff-type="structural"].muted>span {
+  color: #212529 !important
 }

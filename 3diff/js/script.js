@@ -5,56 +5,56 @@ const semantic_selector = 'span[data-diff-type="semantic"]'
 const class_muted = 'muted'
 const class_old_version = 'old_version'
 
-function changeStateStructural(type) {
+function changeStateStructural (type) {
   $(`span[data-diff-op="${type}"]`).toggleClass(class_muted)
 }
 
-function changeStateSemantic(type) {
+function changeStateSemantic (type) {
   $(`span[data-diff-op="${type}"]`).toggleClass(class_muted)
 }
 
-function muteAllStructural() {
+function muteAllStructural () {
   container.find(structural_selector).addClass(class_muted)
 }
 
-function unmuteAllStructural() {
+function unmuteAllStructural () {
   container.find(structural_selector).removeClass(class_muted)
 }
 
-function muteAllSemantic() {
+function muteAllSemantic () {
   container.find(semantic_selector).addClass(class_muted)
 }
 
-function unmuteAllSemantic() {
+function unmuteAllSemantic () {
   container.find(semantic_selector).removeClass(class_muted)
 }
 
-function hideSidebar() {
+function hideSidebar () {
   $('#collapseSemantic').collapse('hide')
 
   $('#sidebar-wrapper>div.list-group').hide()
 }
 
-function showSidebar() {
+function showSidebar () {
   $('#collapseSemantic').collapse('show')
   $('#sidebar-wrapper>div.list-group').show()
 }
 
-function stateCompare() {
+function stateCompare () {
   $('span[data-diff-type="semantic"]').removeClass(class_old_version)
   unmuteAllSemantic()
   unmuteAllStructural()
   showSidebar()
 }
 
-function stateNew() {
+function stateNew () {
   $('span[data-diff-type="semantic"]').removeClass(class_old_version)
   muteAllSemantic()
   muteAllStructural()
   hideSidebar()
 }
 
-function stateOld() {
+function stateOld () {
   $('span[data-diff-type="semantic"]').addClass(class_old_version)
   muteAllSemantic()
   muteAllStructural()
@@ -62,7 +62,6 @@ function stateOld() {
 }
 
 $(document).ready(function () {
-
   muteAllStructural()
 
   $('[href="#collapseStructural"],[href="#collapseSemantic"]').on('click', function () {
@@ -71,19 +70,17 @@ $(document).ready(function () {
   })
 
   $('#changeStateStructural').on('change', function () {
-
     let state = $(this).prop('checked')
     $('#collapseStructural').find('input').prop('checked', state)
 
-      !state ? muteAllStructural() : unmuteAllStructural()
+    !state ? muteAllStructural() : unmuteAllStructural()
   })
 
   $('#changeStateSemantic').on('change', function () {
-
     let state = $(this).prop('checked')
     $('#collapseSemantic>a').find('input').prop('checked', state)
 
-      !state ? muteAllSemantic() : unmuteAllSemantic()
+    !state ? muteAllSemantic() : unmuteAllSemantic()
   })
 
   $('#showNew').on('change', function () {
