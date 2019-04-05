@@ -43,7 +43,9 @@ function showSidebar () {
 function stateCompare () {
   $('span[data-diff-type="semantic"]').removeClass(class_old_version)
   unmuteAllSemantic()
-  unmuteAllStructural()
+  $('#collapseSemantic input').prop('checked', true)
+  $('#collapseStructural input').prop('checked', false)
+  // unmuteAllStructural()
   showSidebar()
 }
 
