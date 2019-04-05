@@ -1072,7 +1072,11 @@
   <script>
     $(document).ready(function () {
       $('span.muted').removeClass('muted')
-    });
+
+      $('#showCompare').on('change', function () {
+        unmuteAllStructural()
+      })
+    })
   </script>
 
 </body>
