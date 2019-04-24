@@ -8,17 +8,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>REPORT Project humanities</title>
+    <title>REPORT HUMANITIES | SCOPUS</title>
+
+    <style>
+        iframe{
+            width: inherit;
+            min-height: 500px;
+        }
+
+        div.row{
+            margin-top: 50px
+        }
+    </style>
   </head>
   <body>
-      <p>See the distribution of:</p>
-      <ul>
-          <li><a href="./journals/wos.html">WOS and ERIH Journals</a></li>
-          <li><a href="./journals/crossref.html">CROSSREF and ERIH Journals</a></li>
-          <li><a href="./journals/scopus.html">SCOPUS and ERIH Journals</a></li>
-          <li><a>DIMENSION and ERIH Journals [TODO]</a></li>
-          <li><a href="./clusters/report.html">Percentage of ERIH Journals' publications in clusters</a></li>
-      </ul>
+    <div class="container">
+        <a href="../index.html">Go to the main page</a>
+        <div class="row">
+            <div class="text-center col-md-12">
+                <iframe src="./SCOPUS_journal_distrib.html" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center col-md-12">
+                <iframe src="./SCOPUS_journal_years.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
