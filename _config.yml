@@ -4,6 +4,6 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-title: Report list
+title: Thesis diary
 include:
-  - 07062019.md
+  - diary.md
