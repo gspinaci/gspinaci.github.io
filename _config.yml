@@ -6,4 +6,5 @@ relative_links:
   collections: true
 title: Thesis diary
 include:
-  - diary.md
+  - 07062019.md
+  - 14062019.md
