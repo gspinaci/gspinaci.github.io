@@ -21,4 +21,8 @@ having the Journal title (maybe URL is better) is possible to retrieve all the o
 * Monday the Google form scratch will be developed
 * Access requested to the CWTS db (remote access to the server and Leiden University Account have been already get)
 
+##14th June 2019
+
+The online form has been created [see here](https://forms.gle/S5dAbWnW2AbVWcGJ9). The only problem is that the iteration (or recursion) is not possible with Google Form nor all the other online form manages that I've tried. (SurveyMonkey gives this possibility but not with free account).
+
 
