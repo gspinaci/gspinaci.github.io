@@ -4,22 +4,22 @@
 
 ### Phases
 
-- [ ] **Phase 1:** Retrieve results
-- [ ] **Phase 2:** Perform analysis
-- [ ] **Phase 3:** Write dissertation
+[ ] **Phase 1:** Retrieve results
+[ ] **Phase 2:** Perform analysis
+[ ] **Phase 3:** Write dissertation
 
 ### Phase 1: Retrieve results
 
-- [ ] Complete Dimension cluster
-- [ ] Complete COCI cluster
-- [ ] Check the spatial and temporal coherence across all the clusterised DBs
-- [ ] Create the list of DH journals
-- [ ] Retrieve the percentage of DH publications from
+[ ] Complete Dimension cluster
+[ ] Complete COCI cluster
+[ ] Check the spatial and temporal coherence across all the clusterised DBs
+[ ] Create the list of DH journals
+[ ] Retrieve the percentage of DH publications from
 
 
 ### Phase 2: Perform analysis
 
-- [ ] Analyse the differences between the results from open and business datasets
+[ ] Analyse the differences between the results from open and business datasets
 
 ### Phase 3: Write dissertation
 
