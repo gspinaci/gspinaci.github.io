@@ -5,7 +5,9 @@
 ### Phases
 
 [ ] **Phase 1:** Retrieve results
+
 [ ] **Phase 2:** Perform analysis
+
 [ ] **Phase 3:** Write dissertation
 
 ### Phase 1: Retrieve results
@@ -44,11 +46,17 @@ Also with the three different visualisation based on the perception level asked 
 
 ### September
 
-Analyse results
+**September 1st-15th** Analyse results
+
+**From September 16th** Write dissertation
 
 ### October
 
-Write dissertation
+**October 3rd:** Last exam
+
+**October 16th:** Upload dissertation
+
+
 
 
 
