@@ -1,0 +1,111 @@
+/* Custom styles for the academic website */
+
+/* Navigation styles */
+.nav-link {
+    @apply px-3 py-2 text-sm font-medium transition-colors duration-200 text-gray-700 hover:text-accent-600;
+}
+
+.nav-link.active {
+    @apply text-accent-600 border-b-2 border-accent-600;
+}
+
+.mobile-nav-link {
+    @apply block px-3 py-2 text-base font-medium transition-colors duration-200 text-gray-700 hover:text-accent-600 hover:bg-gray-50 rounded-md;
+}
+
+.mobile-nav-link.active {
+    @apply text-accent-600 bg-accent-50;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 inline-block text-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+    @apply font-medium py-3 px-6 rounded-lg transition-all duration-200 inline-block text-center border shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+}
+
+/* Card styles */
+.publication-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+}
+
+.teaching-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+}
+
+.blog-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+}
+
+/* Keyword tags */
+.keyword-tag {
+    @apply inline-block text-sm font-medium px-3 py-1 rounded-full shadow-sm;
+}
+
+/* Social links */
+.social-link {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+}
+
+/* Section management */
+.section {
+    @apply transition-opacity duration-300;
+}
+
+.section.hidden {
+    @apply opacity-0 pointer-events-none absolute inset-0;
+}
+
+.section.active {
+    @apply opacity-100 relative;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+input:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+/* Animation for mobile menu */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    .btn-primary, .btn-secondary {
+        @apply w-full text-center;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
