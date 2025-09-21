@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initContactForm();
     loadHIndex();
+    initPublicationFilter();
 });
 
 // Navigation functionality
@@ -130,7 +131,7 @@ function initContactForm() {
             
             // Simple form validation
             if (validateContactForm(data)) {
-                // In a real implementation, you would send this to a server
+                // In a real implementation, you would send this to axerver
                 showFormSuccess();
                 this.reset();
             } else {
@@ -196,7 +197,7 @@ function loadHIndex() {
         // Placeholder implementation
         // In a real implementation, you would fetch this from Scopus API
         setTimeout(() => {
-            hIndexElement.textContent = '12';
+            hIndexElement.textContent = '2';
         }, 1000);
         
         // Uncomment and modify this for real Scopus API integration:
@@ -251,3 +252,53 @@ function initScrollSpy() {
 
 // Initialize scroll spy if needed
 // initScrollSpy();
+
+// Publication filter functionality
+function initPublicationFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const publicationCards = document.querySelectorAll('.publication-card');
+    
+    if (filterButtons.length === 0 || publicationCards.length === 0) {
+        return; // Exit if elements don't exist
+    }
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter publications
+            filterPublications(filter);
+        });
+    });
+}
+
+// Filter publications based on type
+function filterPublications(filter) {
+    const publicationCards = document.querySelectorAll('.publication-card');
+    
+    publicationCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        
+        if (filter === 'all' || cardType === filter) {
+            card.classList.remove('hidden');
+            card.style.display = 'block';
+        } else {
+            card.classList.add('hidden');
+            card.style.display = 'none';
+        }
+    });
+    
+    // Add smooth transition effect
+    setTimeout(() => {
+        publicationCards.forEach(card => {
+            if (!card.classList.contains('hidden')) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    }, 50);
+}

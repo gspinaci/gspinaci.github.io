@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firstname Lastname - PhD Student & Early-Career Academic</title>
-    <meta name="description" content="Academic portfolio of Firstname Lastname, PhD Student and Early-Career Academic">
-    
+    <title>Gianmarco Spinaci - PhD Student & Early-Career Academic</title>
+    <meta name="description" content="Academic portfolio of Gianmarco Spinaci, PhD Student and Early-Career Academic">
+
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -55,31 +55,68 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="bg-gray-900 text-white font-sans overflow-hidden h-screen relative">
+    <!-- Background Video/Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <!-- Digital Humanities themed background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"></div>
+        <!-- Animated background pattern representing data/AI -->
+        <div class="absolute inset-0 opacity-20">
+            <svg class="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                    </pattern>
+                    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+                <rect width="100%" height="100%" fill="url(#dots)"/>
+                <!-- Floating elements representing data nodes -->
+                <g class="animate-pulse">
+                    <circle cx="100" cy="200" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+                    <circle cx="300" cy="150" r="2" fill="rgba(34, 197, 94, 0.6)"/>
+                    <circle cx="500" cy="300" r="4" fill="rgba(168, 85, 247, 0.6)"/>
+                    <circle cx="700" cy="100" r="2" fill="rgba(59, 130, 246, 0.6)"/>
+                    <circle cx="800" cy="400" r="3" fill="rgba(34, 197, 94, 0.6)"/>
+                    <circle cx="200" cy="500" r="2" fill="rgba(168, 85, 247, 0.6)"/>
+                </g>
+                <!-- Connection lines representing neural networks -->
+                <g stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" class="animate-pulse">
+                    <path d="M100,200 Q250,100 300,150"/>
+                    <path d="M300,150 Q400,200 500,300"/>
+                    <path d="M500,300 Q600,150 700,100"/>
+                    <path d="M200,500 Q350,400 500,300"/>
+                </g>
+            </svg>
+        </div>
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <nav class="bg-black bg-opacity-20 backdrop-blur-sm border-b border-white border-opacity-10 fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#home" class="text-xl font-semibold text-gray-900">
-                        Firstname Lastname
+                    <a href="#home" class="text-xl font-semibold text-white">
+                        Gianmarco Spinaci
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="#home" class="nav-link active" data-section="home">Home</a>
                     <a href="#about" class="nav-link" data-section="about">About</a>
                     <a href="#publications" class="nav-link" data-section="publications">Publications</a>
-                    <a href="#teaching" class="nav-link" data-section="teaching">Teaching</a>
-                    <a href="#cv" class="nav-link" data-section="cv">CV</a>
+                    <a href="#research" class="nav-link" data-section="research">Research</a>
+                    <a href="#awards" class="nav-link" data-section="awards">Awards</a>
                     <a href="#blog" class="nav-link" data-section="blog">Blog</a>
-                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-accent-600 focus:outline-none focus:text-accent-600">
+                    <button id="mobile-menu-button" class="text-white hover:text-accent-400 focus:outline-none focus:text-accent-400">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -89,437 +126,476 @@
 
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="md:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-40 backdrop-blur-sm border-t border-white border-opacity-10">
                     <a href="#home" class="mobile-nav-link active" data-section="home">Home</a>
                     <a href="#about" class="mobile-nav-link" data-section="about">About</a>
                     <a href="#publications" class="mobile-nav-link" data-section="publications">Publications</a>
-                    <a href="#teaching" class="mobile-nav-link" data-section="teaching">Teaching</a>
-                    <a href="#cv" class="mobile-nav-link" data-section="cv">CV</a>
+                    <a href="#research" class="mobile-nav-link" data-section="research">Research</a>
+                    <a href="#awards" class="mobile-nav-link" data-section="awards">Awards</a>
                     <a href="#blog" class="mobile-nav-link" data-section="blog">Blog</a>
-                    <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main id="main-content" class="relative z-10 h-screen pt-16 overflow-y-auto md:overflow-hidden">
         <!-- Home Section -->
-        <section id="home" class="section active min-h-screen flex items-center bg-gradient-to-br from-accent-50 to-secondary-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="text-center">
-                    <div class="mb-8">
-                        <div class="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-accent-200 to-secondary-200 rounded-full flex items-center justify-center shadow-lg">
-                            <span class="text-accent-700 text-sm font-medium">Profile Photo</span>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-accent-600 to-secondary-600 bg-clip-text text-transparent mb-4">
-                            Firstname Lastname
-                        </h1>
-                        <p class="text-xl md:text-2xl text-gray-700 mb-6">
-                            PhD Student & Early-Career Academic
-                        </p>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                            Passionate researcher exploring the intersection of technology and society,
-                            with a focus on innovative solutions to complex problems.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#about" class="btn-primary bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700">Learn More About Me</a>
-                            <a href="#contact" class="btn-secondary border-accent-300 text-accent-700 hover:bg-accent-50">Get In Touch</a>
-                        </div>
+        <section id="home" class="section active h-full flex items-center justify-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                <div class="mb-8">
+                    <!-- AI/DH themed icon instead of photo -->
+                    <div class="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+
+
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                        Gianmarco Spinaci
+                    </h1>
+                    <p class="text-xl md:text-2xl text-blue-200 mb-6">
+                        Digital Humanities Research Software Engineer <br>PhD Student
+                    </p>
+
+                    
+                    <!-- Academic Profile Icons -->
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <a href="https://orcid.org/0000-0002-3504-3241" target="_blank" class="academic-icon-link" title="ORCID">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.925-1.531 3.925-3.722 0-2.072-1.556-3.722-3.925-3.722h-2.297z"/>
+                            </svg>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=RuBFhrkAAAAJ" target="_blank" class="academic-icon-link" title="Google Scholar">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/gspinaci" target="_blank" class="academic-icon-link" title="GitHub">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gspinaci/" target="_blank" class="academic-icon-link" title="LinkedIn">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#about" class="btn-primary bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
+                            Explore My Research
+                        </a>
+                        <a href="mailto:gianmarco.spinaci2@unibo.it?subject=Hello from your website" class="btn-secondary border-2 border-white border-opacity-30 text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-lg font-medium transition-all duration-200">
+                            Get In Touch
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section id="about" class="section hidden h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">About Me</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">About Me</h2>
                     
                     <div class="grid md:grid-cols-2 gap-12 items-start">
+
+                                              <div>
+                            <h3 class="text-xl font-semibold text-blue-200 mb-4">Research Interests</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="keyword-tag px-1 bg-blue-500 bg-opacity-20 text-blue-200 border border-blue-400 border-opacity-30 ">Digital Humanities</span>
+                                <span class="keyword-tag px-1 bg-green-500 bg-opacity-20 text-green-200 border border-green-400 border-opacity-30">AI for Cultural Heritage</span>
+                                <span class="keyword-tag px-1 bg-blue-500 bg-opacity-20 text-blue-200 border border-blue-400 border-opacity-30">LLMs</span>
+                                <span class="keyword-tag px-1 bg-purple-500 bg-opacity-20 text-purple-200 border border-purple-400 border-opacity-30">Agentic AI</span>
+                                <span class="keyword-tag px-1 bg-blue-500 bg-opacity-20 text-blue-200 border border-blue-400 border-opacity-30">Text Mining</span>
+                                <span class="keyword-tag px-1 bg-purple-500 bg-opacity-20 text-purple-200 border border-purple-400 border-opacity-30">Machine Learning</span>
+
+                            </div>
+                            
+                            <h3 class="text-xl font-semibold text-blue-200 mb-4">Education</h3>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-400 pl-4 bg-blue-500 bg-opacity-10 p-3 rounded-r-lg">
+                                    <h4 class="font-medium text-white">PhD Student in Cultural Heritage in the Digital Ecosystem</h4>
+                                    <p class="text-gray-300">@ Università di Bologna, Nov 2024 - Present</p>
+                                </div>
+                                <div class="border-l-4 border-purple-400 pl-4 bg-purple-500 bg-opacity-10 p-3 rounded-r-lg">
+                                    <h4 class="font-medium text-white">MSc Digital Humanities and Digital Knowledge</h4>
+                                    <p class="text-gray-300">@ Università di Bologna, Sep 2017 - Nov 2020</p>
+                                    <p class="text-purple-300">110 with Honors</p>
+                                </div>
+                                <div class="border-l-4 border-blue-400 pl-4 bg-blue-500 bg-opacity-10 p-3 rounded-r-lg">
+                                    <h4 class="font-medium text-white">BSc Informatica per il management </h4>
+                                    <p class="text-gray-300">@ Università di Bologna, Sep 2013—Mar 2017</p>
+                                    <p class="text-blue-300">110 with Honors</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Biography</h3>
-                            <p class="text-gray-700 mb-6">
-                                I am a PhD student at [University Name], working under the supervision of 
-                                [Supervisor Name]. My research focuses on [research area], with particular 
-                                interest in [specific topics].
+                            <h3 class="text-xl font-semibold text-blue-200 mb-4">Biography</h3>
+                            <p class="text-gray-300 mb-6">
+                                I am a PhD Student specialized in <strong>Digital Humanities</strong>, <strong>Artificial Intelligence</strong>, and exploring how computational methods can enhance and transform humanities scholarly research.
                             </p>
-                            <p class="text-gray-700 mb-6">
-                                Before starting my PhD, I completed my [degree] at [University] where I 
-                                developed a strong foundation in [relevant areas]. I am passionate about 
-                                [personal interests related to research].
+                            <p class="text-gray-300 mb-6">
+                                My research interests include the integration of <strong>Multimodal Large Language Models</strong> with large-scale image datasets of humanities content. Other areas include <strong>Natural Language Processing</strong>, <strong>Entity Linking</strong>, and <strong>Semantic Web</strong> technologies, with a focus on <strong>Linked Data</strong> for cultural heritage.
                             </p>
-                            <p class="text-gray-700">
-                                When I'm not researching, I enjoy [personal hobbies/interests]. I believe 
-                                in the importance of [personal philosophy or values].
+                            <p class="text-gray-300">
+                                My work centers on knowledge discovery and developing processes for mining, exploring, categorizing, and visualizing humanities data, and creating digital infrastructures that support authoring and publication of research activities.
                             </p>
                         </div>
                         
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Research Interests</h3>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="keyword-tag bg-accent-100 text-accent-800">Machine Learning</span>
-                                <span class="keyword-tag bg-secondary-100 text-secondary-800">Data Science</span>
-                                <span class="keyword-tag bg-accent-100 text-accent-800">Artificial Intelligence</span>
-                                <span class="keyword-tag bg-secondary-100 text-secondary-800">Computer Vision</span>
-                                <span class="keyword-tag bg-accent-100 text-accent-800">Natural Language Processing</span>
-                                <span class="keyword-tag bg-secondary-100 text-secondary-800">Deep Learning</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Education</h3>
-                            <div class="space-y-4">
-                                <div class="border-l-4 border-accent-500 pl-4 bg-accent-50 p-3 rounded-r-lg">
-                                    <h4 class="font-medium text-gray-900">PhD in Computer Science</h4>
-                                    <p class="text-gray-600">University Name, 2021 - Present</p>
-                                </div>
-                                <div class="border-l-4 border-secondary-400 pl-4 bg-secondary-50 p-3 rounded-r-lg">
-                                    <h4 class="font-medium text-gray-900">MSc in Data Science</h4>
-                                    <p class="text-gray-600">University Name, 2019 - 2021</p>
-                                </div>
-                                <div class="border-l-4 border-accent-400 pl-4 bg-accent-50 p-3 rounded-r-lg">
-                                    <h4 class="font-medium text-gray-900">BSc in Computer Science</h4>
-                                    <p class="text-gray-600">University Name, 2016 - 2019</p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="section hidden bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Publications</h2>
+        <section id="publications" class="section hidden h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Publications</h2>
                     
                     <div class="mb-8 text-center">
-                        <div class="inline-flex items-center space-x-4 bg-gradient-to-r from-accent-500 to-secondary-500 text-white rounded-lg px-6 py-3 shadow-lg">
+                        <div class="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg px-6 py-3 shadow-lg backdrop-blur-sm">
                             <span class="text-sm">h-index:</span>
                             <span class="text-2xl font-bold" id="h-index">--</span>
                             <span class="text-sm opacity-90">(via Scopus)</span>
                         </div>
                     </div>
                     
-                    <div class="space-y-6">
-                        <!-- Publication 1 -->
-                        <div class="publication-card">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="https://doi.org/10.1000/example" target="_blank" class="hover:text-accent-600 transition-colors">
-                                    A Novel Approach to Machine Learning in Academic Research
-                                </a>
-                            </h3>
-                            <p class="text-gray-700 mb-2">
-                                <strong>Firstname Lastname</strong>, Co-Author Name, Another Author
-                            </p>
-                            <p class="text-gray-600 mb-2">
-                                <em>Journal of Academic Research</em>, Vol. 15, No. 3, 2023
-                            </p>
-                            <p class="text-gray-700 text-sm">
-                                This paper presents a comprehensive analysis of machine learning applications 
-                                in academic research, demonstrating significant improvements in research efficiency.
-                            </p>
-                        </div>
-
-                        <!-- Publication 2 -->
-                        <div class="publication-card">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="https://doi.org/10.1000/example2" target="_blank" class="hover:text-accent-600 transition-colors">
-                                    Deep Learning Applications in Data Analysis
-                                </a>
-                            </h3>
-                            <p class="text-gray-700 mb-2">
-                                Co-Author Name, <strong>Firstname Lastname</strong>, Third Author
-                            </p>
-                            <p class="text-gray-600 mb-2">
-                                <em>Conference on Data Science</em>, 2022
-                            </p>
-                            <p class="text-gray-700 text-sm">
-                                An exploration of deep learning methodologies for complex data analysis tasks, 
-                                with practical applications in various domains.
-                            </p>
-                        </div>
-
-                        <!-- Publication 3 -->
-                        <div class="publication-card">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="https://doi.org/10.1000/example3" target="_blank" class="hover:text-accent-600 transition-colors">
-                                    Innovative Methods in Computer Vision Research
-                                </a>
-                            </h3>
-                            <p class="text-gray-700 mb-2">
-                                <strong>Firstname Lastname</strong>, Senior Author
-                            </p>
-                            <p class="text-gray-600 mb-2">
-                                <em>International Workshop on Computer Vision</em>, 2022
-                            </p>
-                            <p class="text-gray-700 text-sm">
-                                This work introduces novel computer vision techniques that advance the 
-                                state-of-the-art in image recognition and analysis.
-                            </p>
-                        </div>
+                    <!-- Publication Filter -->
+                    <div class="mb-8 flex flex-wrap justify-center gap-3">
+                        <button class="filter-btn active px-3 py-1 text-xs font-medium bg-white-500/20 text-black-200 rounded-full" data-filter="all">
+                            All Publications
+                        </button>
+                        <button class="filter-btn px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-200 rounded-full" data-filter="journal">
+                            Journal Articles
+                        </button>
+                        <button class="filter-btn px-3 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full" data-filter="conference">
+                            Conference Papers
+                        </button>
+                        <button class="filter-btn px-3 py-1 text-xs font-medium bg-orange-500/20 text-orange-200 rounded-full" data-filter="preprint">
+                            Preprints
+                        </button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Teaching Section -->
-        <section id="teaching" class="section hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Teaching</h2>
                     
-                    <div class="space-y-8">
-                        <!-- Teaching Experience 1 -->
-                        <div class="teaching-card">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold text-gray-900">Introduction to Machine Learning</h3>
-                                <span class="text-gray-600 text-sm">Fall 2023</span>
+                    <!-- Publications Grid -->
+                    <div class="grid md:grid-cols-2 gap-4" id="publications-grid">
+                        <!-- Journal Article 1 -->
+                        <div class="publication-card bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="journal">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-200 rounded-full">Journal Article</span>
+                                <span class="text-xs text-gray-400">2022</span>
                             </div>
-                            <p class="text-gray-700 mb-2">
-                                <strong>Role:</strong> Teaching Assistant | <strong>Institution:</strong> University Name
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                <a href="https://academic.oup.com/dsh/article/37/4/1254/6576088" target="_blank" class="hover:text-blue-300 transition-colors">
+                                    A map of Digital Humanities research across bibliographic data sources
+                                </a>
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                <strong>G. Spinaci</strong>, G. Colavizza, and S. Peroni
                             </p>
-                            <p class="text-gray-700 mb-4">
-                                Assisted in teaching undergraduate students the fundamentals of machine learning, 
-                                including supervised and unsupervised learning algorithms, model evaluation, and practical applications.
+                            <p class="text-gray-400 text-xs">
+                                <em>Digital Scholarship in the Humanities</em>, 2022
                             </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="#" class="text-accent-600 hover:text-accent-700 text-sm underline">Course Syllabus</a>
-                                <a href="#" class="text-accent-600 hover:text-accent-700 text-sm underline">Lecture Notes</a>
-                            </div>
                         </div>
 
-                        <!-- Teaching Experience 2 -->
-                        <div class="teaching-card">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold text-gray-900">Data Structures and Algorithms</h3>
-                                <span class="text-gray-600 text-sm">Spring 2023</span>
+                        <!-- Conference Paper 4 -->
+                        <div class="publication-card bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-4 hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="conference">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Conference Paper</span>
+                                <span class="text-xs text-gray-400">2022</span>
                             </div>
-                            <p class="text-gray-700 mb-2">
-                                <strong>Role:</strong> Lab Instructor | <strong>Institution:</strong> University Name
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                Semantic Data Lakes for Knowledge Extraction in the Humanities: A Case Study on Bernard Berenson's Network of Acquaintances
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                <strong>G. Spinaci</strong>, R. Grillo, L. Klic, and P. Bonora
                             </p>
-                            <p class="text-gray-700 mb-4">
-                                Led weekly lab sessions for 30+ students, covering implementation of fundamental 
-                                data structures and algorithms in Python and Java.
+                            <p class="text-gray-400 text-xs">
+                                <em>Digital Humanities 2022</em>, University of Tokyo
                             </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="#" class="text-accent-600 hover:text-accent-700 text-sm underline">Lab Materials</a>
-                            </div>
                         </div>
 
-                        <!-- Teaching Experience 3 -->
-                        <div class="teaching-card">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h3 class="text-xl font-semibold text-gray-900">Research Methods in Computer Science</h3>
-                                <span class="text-gray-600 text-sm">Fall 2022</span>
+                        <!-- Conference Paper 3 -->
+                        <div class="publication-card bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-4 hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="conference">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Conference Paper</span>
+                                <span class="text-xs text-gray-400">2020</span>
                             </div>
-                            <p class="text-gray-700 mb-2">
-                                <strong>Role:</strong> Guest Lecturer | <strong>Institution:</strong> University Name
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                Preliminary results on mapping digital humanities research
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                <strong>G. Spinaci</strong>, G. Colavizza, and S. Peroni
                             </p>
-                            <p class="text-gray-700 mb-4">
-                                Delivered guest lectures on quantitative research methods and statistical analysis 
-                                for graduate students in computer science.
+                            <p class="text-gray-400 text-xs">
+                                <em>AIUCD</em>, 2020
                             </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CV Section -->
-        <section id="cv" class="section hidden bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Curriculum Vitae</h2>
-                    
-                    <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Professional Summary</h3>
-                        <p class="text-gray-700 mb-6">
-                            PhD student with 3+ years of research experience in machine learning and data science. 
-                            Published researcher with expertise in deep learning, computer vision, and natural language processing. 
-                            Experienced teaching assistant with a passion for education and mentoring.
-                        </p>
+                        <!-- Conference Paper 1 -->
+                        <div class="publication-card bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-4 hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="conference">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Conference Paper</span>
+                                <span class="text-xs text-gray-400">2019</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                <a href="https://dl.acm.org/doi/10.1145/3342558.3345406" target="_blank" class="hover:text-blue-300 transition-colors">
+                                    Multi-layered edits for meaningful interpretation of textual differences
+                                </a>
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                A. Di Iorio, <strong>G. Spinaci</strong>, and F. Vitali
+                            </p>
+                            <p class="text-gray-400 text-xs">
+                                <em>ACM Symposium on Document Engineering</em>, 2019
+                            </p>
+                        </div>
+
+                        <!-- Conference Paper 2 -->
+                        <div class="publication-card bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-4 hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="conference">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Conference Paper</span>
+                                <span class="text-xs text-gray-400">2017</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                <a href="https://dl.acm.org/doi/10.1145/3103010.3103018" target="_blank" class="hover:text-blue-300 transition-colors">
+                                    The RASH JavaScript Editor (RAJE): A Wordprocessor for Writing Web-first Scholarly Articles
+                                </a>
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                <strong>G. Spinaci</strong>, S. Peroni, A. Di Iorio, F. Poggi, and F. Vitali
+                            </p>
+                            <p class="text-gray-400 text-xs">
+                                <em>ACM Symposium on Document Engineering</em>, 2017
+                            </p>
+                        </div>
+
+
+
                         
-                        <div class="grid md:grid-cols-2 gap-8 text-left">
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-3">Key Skills</h4>
-                                <ul class="text-gray-700 space-y-1 text-sm">
-                                    <li>• Python, R, MATLAB</li>
-                                    <li>• TensorFlow, PyTorch, Scikit-learn</li>
-                                    <li>• Statistical Analysis & Modeling</li>
-                                    <li>• Research Design & Methodology</li>
-                                    <li>• Academic Writing & Presentation</li>
-                                </ul>
+
+
+
+                        <!-- Preprint 2
+                        <div class="publication-card bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-sm border border-orange-400/30 rounded-xl p-4 hover:from-orange-500/20 hover:to-red-500/20 transition-all duration-300 shadow-lg hover:shadow-xl" data-type="preprint">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-orange-500/20 text-orange-200 rounded-full">Preprint</span>
+                                <span class="text-xs text-gray-400">2024</span>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-3">Awards & Honors</h4>
-                                <ul class="text-gray-700 space-y-1 text-sm">
-                                    <li>• Graduate Research Fellowship (2023)</li>
-                                    <li>• Best Paper Award, Conference XYZ (2022)</li>
-                                    <li>• Dean's List, Undergraduate (2018-2019)</li>
-                                    <li>• Outstanding Teaching Assistant (2023)</li>
-                                </ul>
-                            </div>
+                            <h4 class="text-sm font-semibold text-blue-200 mb-2 leading-tight">
+                                A Geospatial and Time-based Reconstruction of the Venetian Lagoon in a 3D Web Semantic Infrastructure
+                            </h4>
+                            <p class="text-gray-300 text-xs mb-1">
+                                L. Galeazzo, R. Grillo, and <strong>G. Spinaci</strong>
+                            </p>
+                            <p class="text-gray-400 text-xs">
+                                <em>In preparation</em>
+                            </p>
                         </div>
-                    </div>
-                    
-                    <a href="assets/cv.pdf" target="_blank" class="btn-primary inline-flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                        Download Full CV (PDF)
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog Section -->
-        <section id="blog" class="section hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Blog</h2>
-                    
-                    <div class="space-y-8">
-                        <!-- Blog Post 1 -->
-                        <article class="blog-card">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                <a href="pages/blog/getting-started-with-research.html" class="hover:text-accent-600 transition-colors">
-                                    Getting Started with Academic Research: A Beginner's Guide
-                                </a>
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3">March 15, 2024</p>
-                            <p class="text-gray-700">
-                                Starting academic research can be overwhelming. In this post, I share practical tips 
-                                and strategies that helped me navigate my first year as a PhD student...
-                            </p>
-                        </article>
-
-                        <!-- Blog Post 2 -->
-                        <article class="blog-card">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                <a href="pages/blog/machine-learning-trends.html" class="hover:text-accent-600 transition-colors">
-                                    Machine Learning Trends to Watch in 2024
-                                </a>
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3">February 28, 2024</p>
-                            <p class="text-gray-700">
-                                The field of machine learning continues to evolve rapidly. Here are the key trends 
-                                and developments I'm excited about this year...
-                            </p>
-                        </article>
-
-                        <!-- Blog Post 3 -->
-                        <article class="blog-card">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                <a href="pages/blog/work-life-balance.html" class="hover:text-accent-600 transition-colors">
-                                    Maintaining Work-Life Balance During PhD Studies
-                                </a>
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3">January 20, 2024</p>
-                            <p class="text-gray-700">
-                                PhD studies can be demanding, but maintaining a healthy work-life balance is crucial. 
-                                Here's what I've learned about managing stress and staying productive...
-                            </p>
-                        </article>
+                         -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section hidden bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Contact</h2>
+        <!-- Research Projects Section -->
+        <section id="research" class="section hidden h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Research Projects</h2>
                     
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <!-- Contact Information -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Get In Touch</h3>
-                            
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center p-4 bg-gradient-to-r from-accent-50 to-secondary-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-accent-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <a href="mailto:firstname.lastname@university.edu" class="text-accent-700 hover:text-accent-800 font-medium">
-                                        firstname.lastname@university.edu
-                                    </a>
-                                </div>
-                                
-                                <div class="flex items-center p-4 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-lg">
-                                    <svg class="w-5 h-5 text-secondary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                    <span class="text-gray-700">University Name, Department, City, Country</span>
-                                </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-6 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-gray-500/20 text-gray-200 rounded-full">Completed</span>
+                                <span class="text-xs text-gray-400">Apr 2024—Oct 2024</span>
                             </div>
-                            
-                            <h4 class="text-lg font-semibold text-gray-900 mb-4">Academic Profiles</h4>
-                            <div class="grid grid-cols-2 gap-3">
-                                <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" class="social-link bg-gradient-to-r from-accent-100 to-accent-200 border-accent-300 text-accent-700 hover:from-accent-200 hover:to-accent-300">
-                                    <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.925-1.531 3.925-3.722 0-2.072-1.556-3.722-3.925-3.722h-2.297z"/>
-                                    </svg>
-                                    ORCID
-                                </a>
-                                <a href="https://scholar.google.com" target="_blank" class="social-link bg-gradient-to-r from-secondary-100 to-secondary-200 border-secondary-300 text-secondary-700 hover:from-secondary-200 hover:to-secondary-300">
-                                    <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
-                                    </svg>
-                                    Google Scholar
-                                </a>
-                                <a href="https://github.com/username" target="_blank" class="social-link bg-gradient-to-r from-accent-100 to-accent-200 border-accent-300 text-accent-700 hover:from-accent-200 hover:to-accent-300">
-                                    <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </svg>
-                                    GitHub
-                                </a>
-                                <a href="https://linkedin.com/in/username" target="_blank" class="social-link bg-gradient-to-r from-secondary-100 to-secondary-200 border-secondary-300 text-secondary-700 hover:from-secondary-200 hover:to-secondary-300">
-                                    <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                    </svg>
-                                    LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Quick Contact -->
-                        <div class="bg-gradient-to-br from-accent-500 to-secondary-500 text-white p-8 rounded-xl shadow-lg">
-                            <h3 class="text-xl font-semibold mb-4">Ready to Connect?</h3>
-                            <p class="mb-6 opacity-90">
-                                I'm always interested in discussing research opportunities, collaborations,
-                                or just having a conversation about the latest developments in the field.
-                            </p>
-                            <a href="mailto:firstname.lastname@university.edu?subject=Hello from your website"
-                               class="inline-flex items-center bg-white text-accent-700 font-medium py-3 px-6 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            <h4 class="text-xl font-semibold text-blue-200 mb-3">The letters of Belle Da Costa Greene</h4>
+                            <p class="text-gray-300 text-xs mb-4">Upgrade an existing ETL system to publish 600+ digitized letters and data organization according to Cidoc-crm.</p>
+
+                            <a href="https://bellegreene.itatti.harvard.edu/resource/Start" target="_blank" class="inline-flex items-center text-blue-300 hover:text-blue-200 text-sm transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
                                 </svg>
-                                Send me an email
+                                View Project
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-500/10 to-teal-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-6 hover:from-green-500/20 hover:to-teal-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Active</span>
+                                <span class="text-xs text-gray-400">Jan 2023—Present</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-blue-200 mb-3">Mary Berenson Diaries</h4>
+                            <p class="text-gray-300 text-xs mb-4">Creation of an ETL system to process 25 transcribed and digitized diaries dated between 1891 and 1933.</p>
+                            <a href="https://collection.itatti.harvard.edu/resource/mbdiaries:diaries" target="_blank" class="inline-flex items-center text-blue-300 hover:text-blue-200 text-sm transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Project
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-500/10 to-teal-500/10 backdrop-blur-sm border border-green-400/30 rounded-xl p-6 hover:from-green-500/20 hover:to-teal-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-green-500/20 text-green-200 rounded-full">Active</span>
+                                <span class="text-xs text-gray-400">Jan 2023—Present</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-blue-200 mb-3">VeNiss - Venice's Nissology</h4>
+                            <p class="text-gray-300 text-xs mb-4">Development of the Digital Infrastructure to handle the authoring metadata of sources and events. Definition of an ontological conceptual model to organize the knowledge and integrate 2D and 3D digital artifacts with the platform.</p>
+                            <a href="https://cordis.europa.eu/project/id/101040474/it" target="_blank" class="inline-flex items-center text-blue-300 hover:text-blue-200 text-sm transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Project
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-6 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-gray-500/20 text-gray-200 rounded-full">Completed</span>
+                                <span class="text-xs text-gray-400">Jan 2022—Aug 2025</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-blue-200 mb-3">Metapolis: Spatializing Histories through Archival Sources</h4>
+                            <p class="text-gray-300 text-xs mb-4">Development of the map-based digital infrastructure to support scholarship in the humanities.</p>
+                            <a href="https://apps.neh.gov/publicquery/AwardDetail.aspx?gn=HAA-287761-22" target="_blank" class="inline-flex items-center text-blue-300 hover:text-blue-200 text-sm transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Project
+                            </a>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-emerald-500/10 to-green-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-xl p-6 hover:from-emerald-500/20 hover:to-green-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block px-3 py-1 text-xs font-medium bg-gray-500/20 text-gray-200 rounded-full">Completed</span>
+                                <span class="text-xs text-gray-400">2017</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-blue-200 mb-3">RAJE: RASH Javascript Editor</h4>
+                            <p class="text-gray-300 text-xs mb-4">A comprehensive web-based editor for writing scholarly articles using the RASH (Research Articles in Simplified HTML) format. Provides advanced editing capabilities for academic publishing.</p>
+                            <a href="https://github.com/rash-framework/raje-app" target="_blank" class="inline-flex items-center text-blue-300 hover:text-blue-200 text-sm transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                </svg>
+                                View Code
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-400">
-                    © 2024 Firstname Lastname. All rights reserved.
-                </p>
-                <p class="text-gray-500 text-sm mt-2">
-                    Built with HTML, TailwindCSS, and HTMX
-                </p>
+        <!-- Awards Section -->
+        <section id="awards" class="section hidden h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Awards & Recognition</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+
+                        <!-- Award 2 -->
+                        <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4 hover:from-yellow-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-200 rounded-full">Award</span>
+                                <span class="text-xs text-gray-400">2020</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-yellow-200 mb-2">Gigliozzi prize</h4>
+                            <p class="text-gray-300 text-xs mb-2">AIUCD 2020</p>
+                            <a href="https://x.com/ERC_LiLa/status/1218194288556769281" target="_blank" class="inline-flex items-center text-yellow-300 hover:text-yellow-200 text-xs transition-colors">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Award
+                            </a>
+                        </div>
+
+                        <!-- Award 3 -->
+                        <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4 hover:from-yellow-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-200 rounded-full">Scholarship</span>
+                                <span class="text-xs text-gray-400">2018</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-yellow-200 mb-2">Borsa di studio "Paolucci" (2nd place)</h4>
+                            <p class="text-gray-300 text-xs mb-2">BCC Gradara, 2018</p>
+                            <a href="https://it.scribd.com/document/394446340/Borse-di-studio-Paolucci-della-BCC-ecco-tutti-i-premiati-Il-Resto-del-Carlino-del-28-novembre-2018" target="_blank" class="inline-flex items-center text-yellow-300 hover:text-yellow-200 text-xs transition-colors">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Article
+                            </a>
+                        </div>
+
+                        <!-- Award 4 -->
+                        <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4 hover:from-yellow-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-200 rounded-full">Scholarship</span>
+                                <span class="text-xs text-gray-400">2018</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-yellow-200 mb-2">Borsa di studio "Gemos premia il merito" prima edizione</h4>
+                            <p class="text-gray-300 text-xs mb-2">Gemos, 2018</p>
+                            <a href="https://www.gemos.it/gemos-premia-merito-sostenendo-listruzione-dei-ragazzi/" target="_blank" class="inline-flex items-center text-yellow-300 hover:text-yellow-200 text-xs transition-colors">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View Details
+                            </a>
+                        </div>
+
+                        <!-- Award 5 -->
+                        <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4 hover:from-yellow-500/20 hover:to-orange-500/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-200 rounded-full">Competition</span>
+                                <span class="text-xs text-gray-400">2013</span>
+                            </div>
+                            <h4 class="text-sm font-semibold text-yellow-200 mb-2">Concorso GoToWeb (3rd place)</h4>
+                            <p class="text-gray-300 text-xs mb-2">Latina, 2013</p>
+                            <a href="https://www.radioluna.it/news/2013/05/concorso-go-to-web-premiati-i-vincitori/" target="_blank" class="inline-flex items-center text-yellow-300 hover:text-yellow-200 text-xs transition-colors">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                </svg>
+                                View News
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section hidden h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Blog</h2>
+                    
+                    <div class="text-center py-16">
+                        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Coming Soon</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>

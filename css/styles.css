@@ -1,20 +1,20 @@
-/* Custom styles for the academic website */
+/* Custom styles for the Digital Humanities & AI website */
 
 /* Navigation styles */
 .nav-link {
-    @apply px-3 py-2 text-sm font-medium transition-colors duration-200 text-gray-700 hover:text-accent-600;
+    @apply px-3 py-2 text-sm font-medium transition-colors duration-200 text-white text-opacity-80 hover:text-white hover:text-opacity-100;
 }
 
 .nav-link.active {
-    @apply text-accent-600 border-b-2 border-accent-600;
+    @apply text-white text-opacity-100 border-b-2 border-blue-400;
 }
 
 .mobile-nav-link {
-    @apply block px-3 py-2 text-base font-medium transition-colors duration-200 text-gray-700 hover:text-accent-600 hover:bg-gray-50 rounded-md;
+    @apply block px-3 py-2 text-base font-medium transition-colors duration-200 text-white text-opacity-80 hover:text-white hover:text-opacity-100 hover:bg-white hover:bg-opacity-10 rounded-md;
 }
 
 .mobile-nav-link.active {
-    @apply text-accent-600 bg-accent-50;
+    @apply text-white text-opacity-100 bg-blue-500 bg-opacity-20;
 }
 
 /* Button styles */
@@ -41,25 +41,30 @@
 
 /* Keyword tags */
 .keyword-tag {
-    @apply inline-block text-sm font-medium px-3 py-1 rounded-full shadow-sm;
+    @apply inline-block text-sm font-medium px-3 py-1 rounded-full shadow-sm backdrop-blur-sm;
 }
 
 /* Social links */
 .social-link {
-    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 backdrop-blur-sm;
+}
+
+/* Academic profile icons */
+.academic-icon-link {
+    @apply text-white text-opacity-70 hover:text-opacity-100 transition-all duration-200 transform hover:scale-110 hover:text-blue-300;
 }
 
 /* Section management */
 .section {
-    @apply transition-opacity duration-300;
+    @apply transition-all duration-300;
 }
 
 .section.hidden {
-    @apply opacity-0 pointer-events-none absolute inset-0;
+    @apply opacity-0 pointer-events-none absolute inset-0 translate-y-4;
 }
 
 .section.active {
-    @apply opacity-100 relative;
+    @apply opacity-100 relative translate-y-0;
 }
 
 /* Smooth scrolling for anchor links */
@@ -92,6 +97,34 @@ input:focus, textarea:focus, button:focus {
     .btn-primary, .btn-secondary {
         @apply w-full text-center;
     }
+    
+    /* Allow scrolling on mobile */
+    #main-content {
+        overflow-y: auto !important;
+    }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
 }
 
 /* Print styles */
@@ -108,4 +141,24 @@ input:focus, textarea:focus, button:focus {
     .section {
         page-break-inside: avoid;
     }
+}
+
+/* Filter button styles */
+.filter-btn {
+    @apply px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 border backdrop-blur-sm;
+    @apply bg-white bg-opacity-10 text-white text-opacity-70 border-white border-opacity-20;
+    @apply hover:bg-opacity-20 hover:text-opacity-100 hover:border-opacity-40;
+}
+
+.filter-btn.active {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent shadow-lg;
+}
+
+/* Publication filtering */
+.publication-card.hidden {
+    @apply opacity-0 pointer-events-none absolute;
+}
+
+.publication-card:not(.hidden) {
+    @apply opacity-100 relative;
 }
