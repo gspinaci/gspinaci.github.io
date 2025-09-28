@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can AI Recognize the Saints? Evaluating Multimodal Models for Christian Iconography - Gianmarco Spinaci</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="bg-gray-900 text-white font-sans relative min-h-screen">
+    <!-- Background with same style as main site -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"></div>
+        <div class="absolute inset-0 opacity-20">
+            <svg class="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                    </pattern>
+                    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+                <rect width="100%" height="100%" fill="url(#dots)"/>
+                <g class="animate-pulse">
+                    <circle cx="100" cy="200" r="3" fill="rgba(59, 130, 246, 0.6)"/>
+                    <circle cx="300" cy="150" r="2" fill="rgba(34, 197, 94, 0.6)"/>
+                    <circle cx="500" cy="300" r="4" fill="rgba(168, 85, 247, 0.6)"/>
+                    <circle cx="700" cy="100" r="2" fill="rgba(59, 130, 246, 0.6)"/>
+                    <circle cx="800" cy="400" r="3" fill="rgba(34, 197, 94, 0.6)"/>
+                    <circle cx="200" cy="500" r="2" fill="rgba(168, 85, 247, 0.6)"/>
+                </g>
+                <g stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" class="animate-pulse">
+                    <path d="M100,200 Q250,100 300,150"/>
+                    <path d="M300,150 Q400,200 500,300"/>
+                    <path d="M500,300 Q600,150 700,100"/>
+                    <path d="M200,500 Q350,400 500,300"/>
+                </g>
+            </svg>
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
+
+    <nav class="bg-black bg-opacity-20 backdrop-blur-sm border-b border-white border-opacity-10 relative z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../index.html#blog" class="text-xl font-semibold text-white hover:text-accent-400 transition-colors">
+                        ← Back to Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-white mb-4">
+                Can AI Recognize the Saints? Evaluating Multimodal Models for Christian Iconography
+            </h1>
+            <div class="flex items-center text-gray-400 text-sm">
+                <time datetime="2024-12-15">September 22, 2025</time>
+                <span class="mx-2">•</span>
+                <span>5 min read</span>
+            </div>
+        </header>
+
+        <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-gray-300 mb-8">
+                Over the last few years, Generative Artificial Intelligence (E.g, Chat GPT) has been used extensively for general-purpose tasks translating languages, generating images from text prompts, and even writing code. But other than that, can AI also be used for domain specific tasks such as analyzing historical artworks?
+            </p>
+
+            <p class="text-gray-300 mb-6">
+                That was the question guiding my latest research, carried out with my PhD supervisors. We tested whether today's most advanced AI Multimodal models are able to recognize Christian saints in works of art, and therefore be used in helping curators identify and catalog these figures more efficiently.
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">Why Saints?</h2>
+            <p class="text-gray-300 mb-4">
+                Christian iconography, which is the visual language of saints, biblical figures, and their symbols, has been studied for centuries. Scholars often rely on small details: a sword for Saint Paul or arrows for Saint Sebastian. These visual clues are rich in meaning and easily understood by scholars, but tricky for computers to grasp.
+            </p>
+            <p class="text-gray-300 mb-6">
+                If AI is able to identify these figures, it could be a powerful assistant for museums, libraries, and archives that manage vast digital collections of artworks. Imagine a curator quickly finding all depictions of Saint Francis across thousands of paintings, without manually checking each image.
+            </p>
+
+            <!-- Saints Images Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <!-- Row 1: Francis and Paul -->
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11H(FRANCIS).jpg" alt="Saint Francis" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Saint Francis</h3>
+                            <p class="text-gray-300 text-sm">Founder of the Order of Friars Minor (Franciscans), Francis(cus) of Assisi; possible attributes: book, crucifix, lily, skull, stigmata</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11H(PAUL).jpg" alt="Saint Paul" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Saint Paul</h3>
+                            <p class="text-gray-300 text-sm">the apostle Paul of Tarsus; possible attributes: book, scroll, sword</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Peter and Sebastian -->
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11H(PETER).jpg" alt="Saint Peter" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Saint Peter</h3>
+                            <p class="text-gray-300 text-sm">the apostle Peter, first bishop of Rome; possible attributes: book, cock, (upturned) cross, (triple) crozier, fish, key, scroll, ship, tiara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11H(SEBASTIAN).jpg" alt="Saint Sebastian" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Saint Sebastian</h3>
+                            <p class="text-gray-300 text-sm">the martyr Sebastian; possible attributes: arrow(s), bow, tree-trunk</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Catherine and Mary Magdalene -->
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11HH(CATHERINE).jpg" alt="Saint Catherine" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Saint Catherine</h3>
+                            <p class="text-gray-300 text-sm">the virgin martyr Catherine of Alexandria; possible attributes: book, crown, emperor Maxentius, palm-branch, ring, sword, wheel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/30 rounded-xl p-4 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 shadow-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center">
+                            <img src="imgs/11HH(MARY MADGALENE).jpg" alt="Mary Magdalene" class="w-24 h-24 object-cover rounded-lg shadow-md" style="object-position: center 20%;">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-blue-200 mb-2">Mary Magdalene</h3>
+                            <p class="text-gray-300 text-sm">the penitent harlot Mary Magdalene; possible attributes: book (or scroll), crown, crown of thorns, crucifix, jar of ointment, mirror, musical instrument, palm-branch, rosary, scourge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">What We Did</h2>
+            <p class="text-gray-300 mb-4">
+                We compared two families of AI:
+            </p>
+            <ul class="list-disc pl-6 text-gray-300 mb-4">
+                <li><strong class="text-secondary-300">Vision Language Models:</strong> (CLIP and SigLIP) that connect images to words.</li>
+                <li><strong class="text-secondary-300">Multimodal Large Language Models</strong> (GPT-4o and Gemini 2.5) that can process text and images together.</li>
+            </ul>
+
+            <p class="text-gray-300 mb-4">
+                We tested them on three collections of religious art and running three experiments. For each image we asked the AI to identify which saint was depicted using:
+            </p>
+
+            <ol class="list-decimal pl-6 text-gray-300 mb-6">
+                <li><strong class="text-secondary-300">Just the names</strong> – asking the AI to match an image to a saint's name <i>(E.g., Saint Sebastian)</i>.</li>
+                <li><strong class="text-secondary-300">Descriptions included</strong> – providing a short description of each saint's attributes <i>(E.g. the martyr Sebastian; possible attributes: arrow(s), bow, tree-trunk)</i>.</li>
+                <li><strong class="text-secondary-300">A few examples shown</strong> – letting the AI learn from five examples before making its guesses.</li>
+            </ol>
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">What We Found</h2>
+            <p class="text-gray-300 mb-4">
+                The results were interesting:
+            </p>
+            <ul class="list-disc pl-6 text-gray-300 mb-6">
+                <li><strong class="text-secondary-300">Modern AI models outperformed other approaches.</strong> Gemini 2.5 and GPT-4o, trained on general-purpose data, were more accurate than traditional machine learning systems trained specifically for this task.</li>
+                <li><strong class="text-secondary-300">Context matters.</strong> When we gave the models descriptions of the saints (like "Mary Magdalene, often shown with a book or crown"), they performed better.</li>
+                <li><strong class="text-secondary-300">Learning from a few examples wasn't always helpful.</strong> In some cases, adding examples confused the models instead of improving them.</li>
+                <li>The research demonstrates that while AI shows promise in art historical analysis, the quality and curation of training data significantly impacts performance. This highlights the continued importance of expert knowledge in digital humanities applications. </li>
+            </ul>
+
+            
+
+            <h2 class="text-2xl font-bold text-white mt-8 mb-4">So what?</h2>
+            <p class="text-gray-300 mb-4">
+                This research shows that AI can already help us navigate the complex world of art history. It won't replace expert eyes, saints are still best recognized by trained scholars, especially for real world scenario where we have many saints in the same artworks. But these models can still speed up research and help surface patterns across massive collections.
+            </p>
+            
+        </div>
+
+        <footer class="mt-12 pt-8 border-t border-white border-opacity-10">
+            <div class="flex items-center justify-between">
+                <a href="../../index.html#blog" class="text-secondary-400 hover:text-secondary-300 font-medium transition-colors">
+                    ← Back to Blog
+                </a>
+
+            </div>
+        </footer>
+    </article>
+</body>
+</html>

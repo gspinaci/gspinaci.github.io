@@ -98,16 +98,29 @@ function initMobileMenu() {
 // Toggle mobile menu
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    
     if (mobileMenu) {
-        mobileMenu.classList.toggle('hidden');
+        const isHidden = mobileMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            body.classList.add('mobile-menu-open');
+        } else {
+            mobileMenu.classList.add('hidden');
+            body.classList.remove('mobile-menu-open');
+        }
     }
 }
 
 // Close mobile menu
 function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    
     if (mobileMenu) {
         mobileMenu.classList.add('hidden');
+        body.classList.remove('mobile-menu-open');
     }
 }
 

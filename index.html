@@ -99,7 +99,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#home" class="text-xl font-semibold text-white">
+                    <a href="#home" class="text-xl font-semibold text-white hover:text-blue-300 transition-colors duration-200">
                         Gianmarco Spinaci
                     </a>
                 </div>
@@ -109,14 +109,14 @@
                     <a href="#home" class="nav-link active" data-section="home">Home</a>
                     <a href="#about" class="nav-link" data-section="about">About</a>
                     <a href="#publications" class="nav-link" data-section="publications">Publications</a>
-                    <a href="#research" class="nav-link" data-section="research">Research</a>
-                    <a href="#awards" class="nav-link" data-section="awards">Awards</a>
+                    <a href="#research" class="nav-link" data-section="research">Projects</a>
+                    <!--<a href="#awards" class="nav-link" data-section="awards">Awards</a>-->
                     <a href="#blog" class="nav-link" data-section="blog">Blog</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-white hover:text-accent-400 focus:outline-none focus:text-accent-400">
+                    <button id="mobile-menu-button" class="text-white hover:text-blue-300 focus:outline-none focus:text-blue-300 transition-colors duration-200">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -125,13 +125,13 @@
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-40 backdrop-blur-sm border-t border-white border-opacity-10">
+            <div id="mobile-menu" class="md:hidden hidden absolute left-0 right-0 top-full">
+                <div class="px-4 pt-4 pb-5 space-y-3 bg-black/70 backdrop-blur-md border-t border-white/20 shadow-2xl rounded-b-2xl mx-4">
                     <a href="#home" class="mobile-nav-link active" data-section="home">Home</a>
                     <a href="#about" class="mobile-nav-link" data-section="about">About</a>
                     <a href="#publications" class="mobile-nav-link" data-section="publications">Publications</a>
-                    <a href="#research" class="mobile-nav-link" data-section="research">Research</a>
-                    <a href="#awards" class="mobile-nav-link" data-section="awards">Awards</a>
+                    <a href="#research" class="mobile-nav-link" data-section="research">Projects</a>
+                    <!--<a href="#awards" class="mobile-nav-link" data-section="awards">Awards</a>-->
                     <a href="#blog" class="mobile-nav-link" data-section="blog">Blog</a>
                 </div>
             </div>
@@ -184,8 +184,8 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#about" class="btn-primary bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
-                            Explore My Research
+                        <a href="#publications" class="btn-primary bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
+                            Explore My publications
                         </a>
                         <a href="mailto:gianmarco.spinaci2@unibo.it?subject=Hello from your website" class="btn-secondary border-2 border-white border-opacity-30 text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-lg font-medium transition-all duration-200">
                             Get In Touch
@@ -580,20 +580,74 @@
         <section id="blog" class="section hidden h-full overflow-y-auto">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div class="max-w-5xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Blog</h2>
-                    
-                    <div class="text-center py-16">
-                        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl">
-                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-4">Coming Soon</h3>
-                        
+                    <header class="mb-12 text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Blog</h2>
+                        <p class="text-xl text-blue-200">
+                            Thoughts on digital humanities, AI, and academic research
+                        </p>
+                    </header>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <!-- Blog Post 1 -->
+                        <article class="bg-gradient-to-br from-secondary-500/10 to-secondary-600/10 backdrop-blur-sm border border-secondary-400/30 rounded-xl p-6 hover:from-secondary-500/20 hover:to-secondary-600/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span class="inline-block px-3 py-1 text-sm font-medium bg-secondary-500/20 text-secondary-200 rounded-full">
+                                        AI & Art History
+                                    </span>
+                                    <span class="inline-block px-3 py-1 text-sm font-medium bg-accent-500/20 text-accent-200 rounded-full">
+                                        Digital Humanities
+                                    </span>
+                                </div>
+                                <time datetime="2024-12-15" class="text-sm text-gray-400">September 22, 2025</time>
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold text-white mb-3">
+                                <a href="pages/ai-recognizing-saints/index.html" class="hover:text-secondary-300 transition-colors">
+                                    Can AI Recognize the Saints? A Study on Art and Technology
+                                </a>
+                            </h3>
+                            
+                            <p class="text-gray-300 mb-4">
+                                Over the last few years, Artificial Intelligence (AI) has made headlines for writing essays, generating images, and even chatting with us in natural language. But could these same tools help us better understand centuries-old art?
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <span>8 min read</span>
+                                </div>
+                                <a href="pages/ai-recognizing-saints/index.html" class="inline-flex items-center text-secondary-300 hover:text-secondary-200 font-medium transition-colors">
+                                    Read more
+                                    <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+
+                    </div>
+
+                        <!-- Newsletter Signup 
+                        <div class="mt-16 bg-gradient-to-r from-secondary-500/10 to-accent-500/10 backdrop-blur-sm border border-secondary-400/30 rounded-xl p-8 text-center shadow-lg max-w-2xl mx-auto">
+                            <h3 class="text-2xl font-bold text-white mb-4">Stay Updated</h3>
+                            <p class="text-gray-300 mb-6">
+                                Get notified when I publish new posts about digital humanities, AI research, and academic life.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    class="flex-1 px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white placeholder-gray-400 backdrop-blur-sm"
+                                >
+                                <button class="px-6 py-2 bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-xl">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
     </main>
 
